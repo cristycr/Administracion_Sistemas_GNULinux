@@ -15,8 +15,9 @@ else
 fi
 ```
 
-### Expresiones condicionales (todos para doble corchetes [[ ]] )
+### Expresiones condicionales (todos para doble corchetes [[ ]])
 #### Evaluacion de archivos
+Éstas se pueden usar por sí mismas, sin necesidad de utilizar if\
 **&#91;&#91; -e archivo &#93;&#93;** Comprueba si existe\
 **&#91;&#91; -f archivo &#93;&#93;** Comprueba si es un fichero\
 **&#91;&#91; -d archivo &#93;&#93;** Comprueba si es un directorio\
@@ -43,7 +44,8 @@ fi
 **-ne** Not equal\
 
 > [!NOTE]
-> [[ 001 = 1 ]] es falso, mientras que [[ 001 -eq 1 ]] es cierto
+> [[ 001 = 1 ]] es o [[ 011 == 1 ]] falso (ya que compara cadenas de caracteres)\
+> mientras que [[ 001 -eq 1 ]] es cierto
 
 #### Operadores booleanos
 **&&** And\
