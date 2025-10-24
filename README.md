@@ -6,5 +6,5 @@
 
 # LICENCIA
 
-[Gramática de la Bash](gramatica.md)
+[Gramática de la Bash](DOC/gramatica.md)
 [Comándos básicos](comandos1.md)
