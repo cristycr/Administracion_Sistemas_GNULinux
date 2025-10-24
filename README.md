@@ -5,3 +5,6 @@
 # COLABORACIONES
 
 # LICENCIA
+
+[Gramática de la Bash](gramatica.md)
+[Comándos básicos](comandos1.md)
