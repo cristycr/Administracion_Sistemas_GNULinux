@@ -2,10 +2,11 @@
 
 # Este script comprueba que sólo se ha introducido un parámetro posicional
 # Además, que éste empiece por / (ya que representará un direccionamiento absoluto)
+# El único carácter no alfanumérico que puede contener será /, en la primera posicion o en cualquier otra
 # Comprueba si el parámetro es un archivo regular y si su contenido es de tipo texto
 # Y si se cumplen estas condiciones, lo imprime con cat por consola
 
-if [[ $# == "1" && $* =~ ^[/] ]]; then
+if [[ $# == "1" && $* =~ ^/[[:alnum:]/]*$ ]]; then
 	if [[ -f "$1"  && $(file "$1") =~ text ]]; then
 		cat "$1";
 	elif ! [[ -e "$1" ]]; then
@@ -15,6 +16,8 @@ if [[ $# == "1" && $* =~ ^[/] ]]; then
 	fi
 elif [[ $# != "1" ]]; then
 	echo "Por favor, introduce un único parámetro";
+elif ! [[ $* =~ ^/[[:alnum:]/]*$ ]]; then
+	echo "Sólo puede contener alfanumérico y el caracter /";
 else
 	echo "El direccionamiento debe ser absoluto: [/...]";
 fi

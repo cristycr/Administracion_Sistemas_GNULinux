@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Este script es igual que s-doce-bis, sin la condición de que deba ser un sólo parámetro,
+# por lo que tenemos que comprobar todas estas condiciones pasando por todos los parámetros
+# posicionales que inserte el usuario.
+
+for param in $@; do
+	if [[ "$param" =~ ^/[[:alnum:]/]*$ ]]; then
+		if [[ -f "$param"  && $(file "$param") =~ text ]]; then
+			cat "$param";
+			echo "=====================================================";
+		elif ! [[ -e "$param" ]]; then
+			echo "Este fichero no existe";
+			echo "=====================================================";
+		else
+			echo "No se puede imprimir porque no es de tipo texto";
+			echo "=====================================================";
+		fi
+
+	elif ! [[ "$param" =~ ^/[[:alnum:]/]*$ ]]; then
+		echo "Sólo puede contener alfanumérico y el caracter /";
+		echo "=====================================================";
+	else
+		echo "El direccionamiento debe ser absoluto: [/...]";
+		echo "=====================================================";
+	fi
+done
