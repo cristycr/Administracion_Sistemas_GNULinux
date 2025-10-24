@@ -18,38 +18,38 @@ fi
 ### Expresiones condicionales (todos para doble corchetes [[ ]])
 **Evaluacion de archivos**\
 Éstas se pueden usar por sí mismas, sin necesidad de utilizar if\
-**&#91;&#91; -e archivo &#93;&#93;** Comprueba si existe\
-**&#91;&#91; -f archivo &#93;&#93;** Comprueba si es un fichero\
-**&#91;&#91; -d archivo &#93;&#93;** Comprueba si es un directorio\
-**&#91;&#91; -r archivo &#93;&#93;** Comprueba si existe y permite lectura\
-**&#91;&#91; -w archivo &#93;&#93;** Comprueba si existe y permite lectura\
-**&#91;&#91; -x archivo &#93;&#93;** Comprueba si existe y permite ejecucion\
-**&#91;&#91; -s archivo &#93;&#93;** Comprueba si existe y el tamaño es mayor a cero\
-**&#91;&#91; -z archivo &#93;&#93;** Comprueba si existe y el tamaño es cero
+***&#91;&#91; -e archivo &#93;&#93;*** Comprueba si existe\
+***&#91;&#91; -f archivo &#93;&#93;*** Comprueba si es un fichero\
+***&#91;&#91; -d archivo &#93;&#93;*** Comprueba si es un directorio\
+***&#91;&#91; -r archivo &#93;&#93;*** Comprueba si existe y permite lectura\
+****&#91;&#91; -w archivo &#93;&#93;*** Comprueba si existe y permite lectura\
+***&#91;&#91; -x archivo &#93;&#93;*** Comprueba si existe y permite ejecucion\
+***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si existe y el tamaño es mayor a cero\
+***&#91;&#91; -z archivo &#93;&#93;*** Comprueba si existe y el tamaño es cero
 
 **Comparador de cadenas**\
-**>** Mayor que\
-**<** Menor que\
-**=** Asignacion\
-**!=** Diferente a\
-**==** Igual a (patrón)\
-**=~** Igual a (expresión regular)
+***>*** Mayor que\
+***<*** Menor que\
+***=*** Asignacion\
+***!=*** Diferente a\
+***==*** Igual a (patrón)\
+***=~*** Igual a (expresión regular)
 
 **Comparadores numéricos**\
-**-gt** Greater than\
-**-lt** Lower than\
-**-ge** Greater or equal\
-**-le** Lower or equal\
-**-eq** Equal to\
-**-ne** Not equal
+***-gt*** Greater than\
+***-lt*** Lower than\
+***-ge*** Greater or equal\
+***-le*** Lower or equal\
+***-eq*** Equal to\
+***-ne*** Not equal
 
 > [!NOTE]
 > [[ 001 = 1 ]] es o [[ 011 == 1 ]] falso (ya que compara cadenas de caracteres)\
 > mientras que [[ 001 -eq 1 ]] es cierto
 
 **Operadores booleanos**\
-**&&** And\
-**||** Or
+***&&*** And\
+***||*** Or
 
 ### while y until
 
@@ -114,18 +114,18 @@ Si el parámetro posicional cuenta con más de un dígito, debe estar aislado co
 ## Parámetros especiales
 
 Sólo pueden referenciarse; no se permite asignarles nada.\
-**&#42;**\
+***&#42;***\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando la expansión ocurre entre comillas dobles, representa una única cadena de texto, donde los parámetros se separan por la variable IFS. Si la variable IFS no está definida, por defecto almacena un espacio " ". IFS también puede estar vacía, y los parámetros se representarán juntos sin separador.\
 _"$1c$2c..."_
 
-**@**\
+***@***\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando se efectúa entre comillas dobles, los parámetros posicionales se expande de esta manera:\
 _"$1" "$2"..._
 
-**#**\
+***#***\
 Se expande al número de parámetros posicionales.
 
-**?**\
+***?***\
 Se expande a un número que representa el estado de la ejecución más reciente, que suele ser un _exit_. Si devuelve 0, la ejecución ha salido bien. Si ha salido mal, se representa con un número del 1 al 100.
 ```
 function ERROR() {
@@ -135,7 +135,7 @@ function ERROR() {
 # En este caso, $? será 1.
 ```
 > [!NOTE]
-> Tanto \$@ como \$*, cuando se expanden sin comillas dobles,
+> Tanto &#36;@ como &#36;*, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
 
 
