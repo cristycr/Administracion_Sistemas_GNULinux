@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Este script comprueba que sólo se ha introducido un parámetro posicional
+# Además, que éste empiece por / (ya que representará un direccionamiento absoluto)
+# Ahora, si el parámetro es un archivo regular y contenido = texto
+
+if [[ $# == "1" && $* =~ ^[/] ]]; then
+	if [[ -f "$1"  && $(file "$1") =~ text ]]; then
+		cat "$1";
+	elif ! [[ -e "$1" ]]; then
+		echo "Este fichero no existe"
+	else
+		echo "No se puede imprimir porque no es de tipo texto";
+	fi
+elif [[ $# != "1" ]]; then
+	echo "Por favor, introduce un único parámetro"
+else
+	echo "El direccionamiento debe ser absoluto: [/...]";
+fi
