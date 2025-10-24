@@ -135,5 +135,5 @@ function ERROR() {
 # En este caso, $? será 1.
 ```
 > [!NOTE]
-> Tanto ```S@``` como ```$*```, cuando se expanden sin comillas dobles,
+> Tanto ```$@``` como ```$*```, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
