@@ -22,7 +22,7 @@ fi
 ***&#91;&#91; -f archivo &#93;&#93;*** Comprueba si es un fichero\
 ***&#91;&#91; -d archivo &#93;&#93;*** Comprueba si es un directorio\
 ***&#91;&#91; -r archivo &#93;&#93;*** Comprueba si existe y permite lectura\
-****&#91;&#91; -w archivo &#93;&#93;*** Comprueba si existe y permite lectura\
+***&#91;&#91; -w archivo &#93;&#93;*** Comprueba si existe y permite lectura\
 ***&#91;&#91; -x archivo &#93;&#93;*** Comprueba si existe y permite ejecucion\
 ***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si existe y el tamaño es mayor a cero\
 ***&#91;&#91; -z archivo &#93;&#93;*** Comprueba si existe y el tamaño es cero
