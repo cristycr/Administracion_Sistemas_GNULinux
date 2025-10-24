@@ -114,27 +114,28 @@ Si el parámetro posicional cuenta con más de un dígito, debe estar aislado co
 ## Parámetros especiales
 
 Sólo pueden referenciarse; no se permite asignarles nada.\
-**&#42;**
+**&#42;**\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando la expansión ocurre entre comillas dobles, representa una única cadena de texto, donde los parámetros se separan por la variable IFS. Si la variable IFS no está definida, por defecto almacena un espacio " ". IFS también puede estar vacía, y los parámetros se representarán juntos sin separador.\
-_"$1c$2c..."_\
+_"$1c$2c..."_
 
-**@**
+**@**\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando se efectúa entre comillas dobles, los parámetros posicionales se expande de esta manera:\
-_"$1" "$2"..._\
+_"$1" "$2"..._
 
-**#**
+**#**\
 Se expande al número de parámetros posicionales.
-**?**
+
+**?**\
 Se expande a un número que representa el estado de la ejecución más reciente, que suele ser un _exit_. Si devuelve 0, la ejecución ha salido bien. Si ha salido mal, se representa con un número del 1 al 100.
 ```
 function ERROR() {
 	exit 1;
 }
 
-\# En este caso, $? será 1.
+# En este caso, $? será 1.
 ```
 > [!NOTE]
-> Tanto $@ como $*, cuando se expanden sin comillas dobles,
-> devuelve por la salida estándar el mismo resultado.
+> Tanto \$@ como \$*, cuando se expanden sin comillas dobles,
+> devuelven por la salida estándar el mismo resultado.
 
 
