@@ -101,14 +101,14 @@ Se asignan a partir de los argumentos de la shell cuando ésta es llamada\
 ```
 ls -l -a
 
-\# Los parámetros posicionales son los siguientes
+# Los parámetros posicionales son los siguientes
 $1 = -l
 $2 = -a
 ```
 
 Si el parámetro posicional cuenta con más de un dígito, debe estar aislado con llaves.
 ```
-**${11}**
+${11}
 ```
 
 ## Parámetros especiales
@@ -135,7 +135,5 @@ function ERROR() {
 # En este caso, $? será 1.
 ```
 > [!NOTE]
-> Tanto &#36;@ como &#36;*, cuando se expanden sin comillas dobles,
+> Tanto ```S@``` como ```$*```, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
-
-
