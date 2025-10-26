@@ -14,8 +14,8 @@ organizados por temática y complejidad creciente.
 ## COMANDOS BÁSICOS DE NAVEGACIÓN Y GESTIÓN DE ARCHIVOS
 
 > [!NOTE]
-> Nivel principiante
-> Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.\
+> Nivel principiante.\
+> Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.
 
 1. ```pwd```
    - Muestra el directorio actual de trabajo
