@@ -15,21 +15,44 @@ organizados por temática y complejidad creciente.
 
 > [!NOTE]
 > Nivel principiante
-> Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.
+> Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.\
 
-**Comando		Descripción					Ejemplo**
-```pwd```		Muestra el directorio actual de trabajo		```pwd```\
-```ls```		Lista archivos y directorios			```ls -l```\
-```cd```		Cambia de directorio				```cd /etc```\
-```mkdir```		Crea un nuevo directorio			```mkdir temporal```\
-```rmdir```		Elimina un directorio **vacío**			```rmdir temporal```\
-```cp```		Copia archivos o directorios			```cp archivo /archivo.backup```
-```mv```		Mueve o renombra archivos			```mv viejo nuevo```
-```rm```		Elimina ficheros				```rm fichero.txt```
-```touch```		Crea un archivo vacío o actualiza su fecha	```touch apuntes.txt```
-```cat```		Muestra el contenido de un fichero		```cat apuntes```
-```less/more```		Muestra contenido de forma paginada		```less /etc/passwd```
-```file```		Muestra el tipo de fichero			```file imagen.png```
+1. ```pwd```
+  _Muestra el directorio actual de trabajo
+  _Ejemplo: ```pwd```
+3. ```ls```
+  _Lista archivos y directorios
+  _Ejemplo:```ls -l```
+5. ```cd```
+  _Cambia de directorio
+  _Ejemplo:```cd /etc```
+7. ```mkdir```
+  _Crea un nuevo directorio
+  _Ejemplo:```mkdir temporal```
+9. ```rmdir```
+  _Elimina un directorio **vacío**
+  _Ejemplo:```rmdir temporal```
+11. ```cp```
+  _Copia archivos o directorios
+  _Ejemplo:```cp archivo /archivo.backup```
+13. ```mv```
+  _Mueve o renombra archivos
+  _Ejemplo:```mv viejo nuevo```
+15. ```rm```
+  _Elimina ficheros
+  _Ejemplo:```rm fichero.txt```
+17. ```touch```
+  _Crea un archivo vacío o actualiza su fecha
+  _Ejemplo:```touch apuntes.txt```
+19. ```cat```
+  _Muestra el contenido de un fichero
+  _Ejemplo:```cat apuntes```
+21. ```less/more```
+  _Muestra contenido de forma paginada
+  _Ejemplo:```less /etc/passwd```
+23. ```file```
+  _Muestra el tipo de fichero
+  _Ejemplo:```file imagen.png```
 
 ## BÚSQUEDA Y FILTRACIÓN DE INFORMACIÓN
 
