@@ -20,39 +20,39 @@ organizados por temática y complejidad creciente.
 1. ```pwd```
    - Muestra el directorio actual de trabajo
    - Ejemplo: ```pwd```
-3. ```ls```
-   -Lista archivos y directorios
-   -Ejemplo:```ls -l```
-5. ```cd```
-   -Cambia de directorio
-   -Ejemplo:```cd /etc```
-7. ```mkdir```
-   -Crea un nuevo directorio
-   -Ejemplo:```mkdir temporal```
-9. ```rmdir```
-   -Elimina un directorio **vacío**
-   -Ejemplo:```rmdir temporal```
-11. ```cp```
-    -Copia archivos o directorios
-    -Ejemplo:```cp archivo /archivo.backup```
-13. ```mv```
-    -Mueve o renombra archivos
-    -Ejemplo:```mv viejo nuevo```
-15. ```rm```
-    -Elimina ficheros
-    -Ejemplo:```rm fichero.txt```
-17. ```touch```
-    -Crea un archivo vacío o actualiza su fecha
-    -Ejemplo:```touch apuntes.txt```
-19. ```cat```
-    -Muestra el contenido de un fichero
-    -Ejemplo:```cat apuntes```
-21. ```less/more```
-    -Muestra contenido de forma paginada
-    -Ejemplo:```less /etc/passwd```
-23. ```file```
-    -Muestra el tipo de fichero
-    -Ejemplo:```file imagen.png```
+2. ```ls```
+   - Lista archivos y directorios
+   - Ejemplo:```ls -l```
+3. ```cd```
+   - Cambia de directorio
+   - Ejemplo:```cd /etc```
+4. ```mkdir```
+   - Crea un nuevo directorio
+   - Ejemplo:```mkdir temporal```
+5. ```rmdir```
+   - Elimina un directorio **vacío**
+   - Ejemplo:```rmdir temporal```
+6. ```cp```
+   - Copia archivos o directorios
+   - Ejemplo:```cp archivo /archivo.backup```
+7. ```mv```
+   - Mueve o renombra archivos
+   - Ejemplo:```mv viejo nuevo```
+8. ```rm```
+   - Elimina ficheros
+   - Ejemplo:```rm fichero.txt```
+9. ```touch```
+   - Crea un archivo vacío o actualiza su fecha
+   - Ejemplo:```touch apuntes.txt```
+10. ```cat```
+    - Muestra el contenido de un fichero
+    - Ejemplo:```cat apuntes```
+11. ```less/more```
+    - Muestra contenido de forma paginada
+    - Ejemplo:```less /etc/passwd```
+12. ```file```
+    - Muestra el tipo de fichero
+    - Ejemplo:```file imagen.png```
 
 ## BÚSQUEDA Y FILTRACIÓN DE INFORMACIÓN
 
