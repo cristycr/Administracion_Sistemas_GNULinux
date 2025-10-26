@@ -18,8 +18,8 @@ organizados por temática y complejidad creciente.
 > Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.\
 
 1. ```pwd```
-   -Muestra el directorio actual de trabajo
-   -Ejemplo: ```pwd```
+   - Muestra el directorio actual de trabajo
+   - Ejemplo: ```pwd```
 3. ```ls```
    -Lista archivos y directorios
    -Ejemplo:```ls -l```
