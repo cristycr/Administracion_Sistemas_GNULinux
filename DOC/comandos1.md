@@ -18,41 +18,41 @@ organizados por temática y complejidad creciente.
 > Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.\
 
 1. ```pwd```
-  _Muestra el directorio actual de trabajo
-  _Ejemplo: ```pwd```
+   -Muestra el directorio actual de trabajo
+   -Ejemplo: ```pwd```
 3. ```ls```
-  _Lista archivos y directorios
-  _Ejemplo:```ls -l```
+   -Lista archivos y directorios
+   -Ejemplo:```ls -l```
 5. ```cd```
-  _Cambia de directorio
-  _Ejemplo:```cd /etc```
+   -Cambia de directorio
+   -Ejemplo:```cd /etc```
 7. ```mkdir```
-  _Crea un nuevo directorio
-  _Ejemplo:```mkdir temporal```
+   -Crea un nuevo directorio
+   -Ejemplo:```mkdir temporal```
 9. ```rmdir```
-  _Elimina un directorio **vacío**
-  _Ejemplo:```rmdir temporal```
+   -Elimina un directorio **vacío**
+   -Ejemplo:```rmdir temporal```
 11. ```cp```
-  _Copia archivos o directorios
-  _Ejemplo:```cp archivo /archivo.backup```
+    -Copia archivos o directorios
+    -Ejemplo:```cp archivo /archivo.backup```
 13. ```mv```
-  _Mueve o renombra archivos
-  _Ejemplo:```mv viejo nuevo```
+    -Mueve o renombra archivos
+    -Ejemplo:```mv viejo nuevo```
 15. ```rm```
-  _Elimina ficheros
-  _Ejemplo:```rm fichero.txt```
+    -Elimina ficheros
+    -Ejemplo:```rm fichero.txt```
 17. ```touch```
-  _Crea un archivo vacío o actualiza su fecha
-  _Ejemplo:```touch apuntes.txt```
+    -Crea un archivo vacío o actualiza su fecha
+    -Ejemplo:```touch apuntes.txt```
 19. ```cat```
-  _Muestra el contenido de un fichero
-  _Ejemplo:```cat apuntes```
+    -Muestra el contenido de un fichero
+    -Ejemplo:```cat apuntes```
 21. ```less/more```
-  _Muestra contenido de forma paginada
-  _Ejemplo:```less /etc/passwd```
+    -Muestra contenido de forma paginada
+    -Ejemplo:```less /etc/passwd```
 23. ```file```
-  _Muestra el tipo de fichero
-  _Ejemplo:```file imagen.png```
+    -Muestra el tipo de fichero
+    -Ejemplo:```file imagen.png```
 
 ## BÚSQUEDA Y FILTRACIÓN DE INFORMACIÓN
 
