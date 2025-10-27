@@ -25,7 +25,11 @@ fi
 ***&#91;&#91; -w archivo &#93;&#93;*** Comprueba si existe y permite lectura\
 ***&#91;&#91; -x archivo &#93;&#93;*** Comprueba si existe y permite ejecucion\
 ***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si existe y el tamaño es mayor a cero\
-***&#91;&#91; -z archivo &#93;&#93;*** Comprueba si existe y el tamaño es cero
+***&#91;&#91; -z archivo &#93;&#93;*** Comprueba si existe y el tamaño es cero\
+***&#91;&#91; -b archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo bloque\
+***&#91;&#91; -c archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo caracter
+***&#91;&#91; -p archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo pipe\
+***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo socket
 
 **Comparador de cadenas**\
 ***>*** Mayor que\
