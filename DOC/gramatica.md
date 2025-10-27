@@ -141,5 +141,3 @@ function ERROR() {
 > [!NOTE]
 > Tanto ```$@``` como ```$*```, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
-
-Para más información, consulta [la guía de instalación](INSTALL.md) o el [registro de cambios](CHANGELOG.md).
