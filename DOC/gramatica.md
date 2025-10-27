@@ -52,8 +52,8 @@ fi
 > mientras que [[ 001 -eq 1 ]] es cierto
 
 **Operadores booleanos**\
-***&&*** And\
-***||*** Or
+**&&** And\
+**||** Or
 
 ### while y until
 
