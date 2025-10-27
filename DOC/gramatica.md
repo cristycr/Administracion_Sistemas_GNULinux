@@ -141,3 +141,55 @@ function ERROR() {
 > [!NOTE]
 > Tanto ```$@``` como ```$*```, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
+
+
+## Variables de la shell
+La shell tiene una serie de variables definidas automáticamente:
+
+**PPID**\
+El PID del proceso padre de la shell. Esta variable es de lectura exclusiva.\
+
+**PWD**\
+Es el directorio de trabajo actual como lo pone la orden ```cd```\
+
+**OLDPWD**\
+Es el directorio de trabajo anterior como lo puso la orden ```cd```\
+
+**REPLY**\
+La línea de entrada leída por la orden interna ```read``` cuando no se le dan argumentos.\
+
+**UID**\
+Se expande al UID del usuario en curso, puesta en el arranque de la shell. Esta variable es de lectura excliva.\
+
+**EUID**\
+Se expande al UID efectivo del usuario en curso, puesta en el arranque de la shell. Esta variable es de lectura exclusiva.\
+
+**GROUPS**\
+Una variable vector conteniendo la lista de grupos de los que el usuario actual es miembro. Esta variable es de lectura exclusiva.\
+
+**BASH**\
+Se expande al nombre completo del fichero empleado para llamar a esta instancia de **bash**.\
+
+**BASH_VERSION**\
+Se expande a una cadena que describe la versión de esta instancia de **bash**.\
+
+**BASH_VERSINFO**\
+Una variable vector de lectura exclusiva cuyos elementos contienen información de versión para esta instancia de **bash**. Los valores asignados a los miembtros del vector son como sigue:\
+	- **BASH_VERSINFO[0]**\
+	El número mayor de versión (la _distribución_)\
+	
+	- **BASH_VERSINFO[1]**\
+	El número menor de versión (la _versión_)\
+
+	- **BASH_VERSINFO[2]**\
+	El nivel de parcheo.\
+
+	- **BASH_VERSINFO[3]**\
+	La versión de construcción.\	
+
+	- **BASH_VERSINFO[4]**\
+	El estado de la distribución (por ejemplo, _beta1_).\
+
+	- **BASH_VERSINFO[5]**\
+	El valor de **MACHTYPE**.\
+
