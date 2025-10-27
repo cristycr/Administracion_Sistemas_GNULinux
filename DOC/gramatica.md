@@ -175,21 +175,22 @@ Se expande a una cadena que describe la versión de esta instancia de **bash**.\
 
 **BASH_VERSINFO**\
 Una variable vector de lectura exclusiva cuyos elementos contienen información de versión para esta instancia de **bash**. Los valores asignados a los miembtros del vector son como sigue:\
-	- **BASH_VERSINFO[0]**\
-	El número mayor de versión (la _distribución_)\
+
+- **BASH_VERSINFO[0]**\
+El número mayor de versión (la _distribución_)\
 	
-	- **BASH_VERSINFO[1]**\
-	El número menor de versión (la _versión_)\
+- **BASH_VERSINFO[1]**\
+El número menor de versión (la _versión_)\
 
-	- **BASH_VERSINFO[2]**\
-	El nivel de parcheo.\
+- **BASH_VERSINFO[2]**\
+El nivel de parcheo.\
 
-	- **BASH_VERSINFO[3]**\
-	La versión de construcción.\	
+- **BASH_VERSINFO[3]**\
+La versión de construcción.\	
 
-	- **BASH_VERSINFO[4]**\
-	El estado de la distribución (por ejemplo, _beta1_).\
+- **BASH_VERSINFO[4]**\
+El estado de la distribución (por ejemplo, _beta1_).\
 
-	- **BASH_VERSINFO[5]**\
-	El valor de **MACHTYPE**.\
+- **BASH_VERSINFO[5]**\
+El valor de **MACHTYPE**.\
 
