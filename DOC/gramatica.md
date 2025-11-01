@@ -5,7 +5,7 @@
 ### if
 
 **ejemplo de if, elif y else:**
-```
+```bash
 if [[ -f $FILE ]]; then
 	echo "FICHERO";
 elif [[ -d $FILE ]]; then
@@ -58,7 +58,7 @@ fi
 ### while y until
 
 **ejemplo de while:**
-```
+```bash
 contador=0
 
 while (( $contador < 11 )); do
@@ -80,7 +80,7 @@ done;
 ### function
 
 **ejemplo de función:**
-```
+```bash
 function saludar() {
 	echo "Hola mundo!";
 }
@@ -92,7 +92,7 @@ saludar
 En lo que se refiere a la shell, una **variable** es un parámetro identificado por un nombre
 
 Se le asignan valores mediante esta sentencia sencilla
-```
+```bash
 nombre=[valor]
 ```
 Si no definimos un valor, ésta se asigna vacía
@@ -102,7 +102,7 @@ Si no definimos un valor, ésta se asigna vacía
 Éstos están representados con números enteros, distintos de 0.\
 Se asignan a partir de los argumentos de la shell cuando ésta es llamada\
 **ejemplo:**
-```
+```bash
 ls -l -a
 
 # Los parámetros posicionales son los siguientes
@@ -111,7 +111,7 @@ $2 = -a
 ```
 
 Si el parámetro posicional cuenta con más de un dígito, debe estar aislado con llaves.
-```
+```bash
 ${11}
 ```
 
@@ -131,7 +131,7 @@ Se expande al número de parámetros posicionales.
 
 ***?***\
 Se expande a un número que representa el estado de la ejecución más reciente, que suele ser un _exit_. Si devuelve 0, la ejecución ha salido bien. Si ha salido mal, se representa con un número del 1 al 100.
-```
+```bash
 function ERROR() {
 	exit 1;
 }
@@ -148,7 +148,7 @@ Se expande al PID de la shell. En una subshell (), se expande al PID de la shell
 
 ***!***\
 Se expande al PID de la orden más recientemente ejecutada en segundo plano (asíncronamente). Para ejecutar un comando en segundo plano, podemos hacer uso del carácter especial **&** de la siguiente manera.\
-```
+```bash
 sleep 5&
 ```
 Si hacemos uso del ```$!```, éste mostrara el PID de esta última orden.
