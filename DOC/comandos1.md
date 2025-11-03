@@ -116,7 +116,7 @@ organizados por temática y complejidad creciente.
 | `echo` | Imprime texto | `echo "Hola mundo"` |
 | `read` | Lee y guarda la entrada en una variable | `read nombre` |
 
-Si quieres ver más sobre Bash Scripting, consulta la guía de [gramática de la Bash](DOC/gramatica.md).
+Si quieres ver más sobre Bash Scripting, consulta la guía de [gramática de la Bash](gramatica.md).
 
 ## UTILIDADES Y TRUCOS ÚTILES
 
