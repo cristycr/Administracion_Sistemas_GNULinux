@@ -215,3 +215,11 @@ Se incrementa en uno cada vez que se arranca una nueva instancia de **bash**.
 
 **RANDOM**\
 Cada vez que este parámetro sea referenciado, se genera un entero aleatorio entre 0 y 32767. La secuencia de números aleatorios
+
+## Vectores
+En bash, las variables son de tipo _vector monodimensional_. Cualquier variable puede usarse como un vector. Igual que en otros lenguajes de programación, los elementos se indexan utilizando números enteros, empezando por el cero.
+
+Se asignan valores a los vectores mediante asignaciones compuestas de la forma _nombre=(valor1 ... valorn)_, donde cada valor es de la forma _[índice]=cadena_. Sólo _cadena_ es necesario. Si se suministrara en la asignación el índice entre corchetes además de _cadena_, se asignará a ese índice concreto.
+
+Cualquier elemento de un vector puede referenciarse mediante ${nombre[índice]}. Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.\
+Si _indice_ es @ o *, la palabra se expande a todos los miembros de _nombre_.
