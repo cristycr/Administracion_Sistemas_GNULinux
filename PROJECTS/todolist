@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# La función add añadirá al fichero de tareas tantas líneas nuevas como parámetros posicionales haya
+# La función remove eliminará una sola línea a la vez y preguntará por confirmación
+# La función force (f) eliminará sin pedir confirmación (investigar cómo hacer esto)
+
+## Crear el fichero de notas si no existe
+
+$FICHERO=~/.todolist.txt;
+
+touch $FICHERO;
+
+## FUNCIÓN DE ERROR ##
+
+function ERROR() {
+cat << EOF
+USAGE:
+	$0 [-a|--add] TAREA...
+	$0 [-r|--remove] NUMERO
+
+EOF
+exit;
+}
+
+## FUNCIÓN ADD ##
+
+function ADD() {
+	for param in "${@:2}"; do
+		echo "$param" >> $FICHERO;
+	done
+}
+
+## FUNCIÓN REMOVE ##
+
+## CASE ##

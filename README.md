@@ -1,5 +1,6 @@
-# HOLA MUNDO!
+# Bienvenido a mi repositorio de Linux!
 ![Tex using on a computer](./tex.gif)
+
 
 # PROPÓSITO DEL REPOSITORIO
 

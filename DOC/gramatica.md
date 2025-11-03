@@ -148,39 +148,39 @@ function ERROR() {
 ```
 
 ***-***\
-Se expande a las opciones de la shell activas actualmente según se hayan especificado en la llamada, mediante la orden interna ```set```, o las que haya puesto la misma shell (como la opción **-i**). Lo que quiere decir: igual que otros comandos, cuando hacemos una llamada a ```bash```, podremos invocar una nueva bash dentro de la actual, donde pobremos añadir todas las opciones que queramos según lo que necesitemos (como podemos ver en ```man bash```). Por lo tanto, la variable ```$-``` mostrará las opciones que está utilizando la bash actual.\
-Podemos además modificar las opciones de la bash actual con el comando ```set```. Si no modificamos nada y ejecutamos una shell de forma normal, ésta se ejecutará con una serie de opciones por defecto.
+Se expande a las opciones de la shell activas actualmente según se hayan especificado en la llamada, mediante la orden interna `set`, o las que haya puesto la misma shell (como la opción **-i**). Lo que quiere decir: igual que otros comandos, cuando hacemos una llamada a `bash`, podremos invocar una nueva bash dentro de la actual, donde pobremos añadir todas las opciones que queramos según lo que necesitemos (como podemos ver en `man bash`). Por lo tanto, la variable `$-` mostrará las opciones que está utilizando la bash actual.\
+Podemos además modificar las opciones de la bash actual con el comando `set`. Si no modificamos nada y ejecutamos una shell de forma normal, ésta se ejecutará con una serie de opciones por defecto.
 
 ***$***\
-Se expande al PID de la shell. En una subshell (), se expande al PID de la shell actual, no al de la subshell. Podemos ver el mismo resultado imprimiento la variable BASHPID ```echo $BASHPID```.
+Se expande al PID de la shell. En una subshell (), se expande al PID de la shell actual, no al de la subshell. Podemos ver el mismo resultado imprimiento la variable BASHPID `echo $BASHPID`.
 
 ***!***\
 Se expande al PID de la orden más recientemente ejecutada en segundo plano (asíncronamente). Para ejecutar un comando en segundo plano, podemos hacer uso del carácter especial **&** de la siguiente manera.\
 ```bash
 sleep 5&
 ```
-Si hacemos uso del ```$!```, éste mostrara el PID de esta última orden.
+Si hacemos uso del `$!`, éste mostrara el PID de esta última orden.
 
 > [!NOTE]
-> Tanto ```$@``` como ```$*```, cuando se expanden sin comillas dobles,
+> Tanto `$@` como `$*`, cuando se expanden sin comillas dobles,
 > devuelven por la salida estándar el mismo resultado.
 
 
 ## Variables de la shell
-La shell tiene una serie de variables que se definen automáticamente. Éstas variables se conocen como variables de entorno. Existe un comando interno de bash para visualizar todas las variables de entorno en el momento que se ejecuta. Este comando es ```set```.\
+La shell tiene una serie de variables que se definen automáticamente. Éstas variables se conocen como variables de entorno. Existe un comando interno de bash para visualizar todas las variables de entorno en el momento que se ejecuta. Este comando es `set`.\
 Aquí te muestro una lista de las variables de entorno con una breve descripción:
 
 **PPID**\
 El PID del proceso padre de la shell. Esta variable es de lectura exclusiva.
 
 **PWD**\
-Es el directorio de trabajo actual como lo pone la orden ```cd```
+Es el directorio de trabajo actual como lo pone la orden `cd`
 
 **OLDPWD**\
-Es el directorio de trabajo anterior como lo puso la orden ```cd```
+Es el directorio de trabajo anterior como lo puso la orden `cd`
 
 **REPLY**\
-La línea de entrada leída por la orden interna ```read``` cuando no se le dan argumentos.
+La línea de entrada leída por la orden interna `read` cuando no se le dan argumentos.
 
 **UID**\
 Se expande al UID del usuario en curso, puesta en el arranque de la shell. Esta variable es de lectura excliva.
