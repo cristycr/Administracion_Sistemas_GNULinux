@@ -1,4 +1,5 @@
 # HOLA MUNDO!
+![Tex using on a computer](./tex.gif)
 
 # PROPÓSITO DEL REPOSITORIO
 
