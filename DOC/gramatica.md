@@ -17,43 +17,51 @@ fi
 
 ### Expresiones condicionales (todos para doble corchetes [[ ]])
 **Evaluacion de archivos**\
-Éstas se pueden usar por sí mismas, sin necesidad de utilizar if\
-***&#91;&#91; -e archivo &#93;&#93;*** Comprueba si existe\
-***&#91;&#91; -f archivo &#93;&#93;*** Comprueba si es un fichero\
-***&#91;&#91; -d archivo &#93;&#93;*** Comprueba si es un directorio\
-***&#91;&#91; -r archivo &#93;&#93;*** Comprueba si existe y permite lectura\
-***&#91;&#91; -w archivo &#93;&#93;*** Comprueba si existe y permite lectura\
-***&#91;&#91; -x archivo &#93;&#93;*** Comprueba si existe y permite ejecucion\
-***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si existe y el tamaño es mayor a cero\
-***&#91;&#91; -z archivo &#93;&#93;*** Comprueba si existe y el tamaño es cero\
-***&#91;&#91; -b archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo bloque\
-***&#91;&#91; -c archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo caracter\
-***&#91;&#91; -p archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo pipe\
-***&#91;&#91; -s archivo &#93;&#93;*** Comprueba si es archivo especial de dispositivo de tipo socket
+Éstas se pueden usar por sí mismas, sin necesidad de utilizar if
+| Sintaxis | Descripción |
+| --- | --- |
+| `[[ -e archivo ]]` | Comprueba si existe |
+| `[[ -f archivo ]]` | Comprueba si es un fichero |
+| `[[ -d archivo ]]` | Comprueba si es un directorio |
+| `[[ -r archivo ]]` | Comprueba si existe y permite lectura |
+| `[[ -w archivo ]]` | Comprueba si existe y permite lectura |
+| `[[ -x archivo ]]` | Comprueba si existe y permite ejecucion |
+| `[[ -s archivo ]]` | Comprueba si existe y el tamaño es mayor a cero |
+| `[[ -z archivo ]]` | Comprueba si existe y el tamaño es cero |
+| `[[ -b archivo ]]` | Comprueba si es archivo especial de dispositivo de tipo bloque |
+| `[[ -c archivo ]]` | Comprueba si es archivo especial de dispositivo de tipo caracter |
+| `[[ -p archivo ]]` | Comprueba si es archivo especial de dispositivo de tipo pipe |
+| `[[ -s archivo ]]` | Comprueba si es archivo especial de dispositivo de tipo socket |
 
-**Comparador de cadenas**\
-***>*** Mayor que\
-***<*** Menor que\
-***=*** Asignacion\
-***!=*** Diferente a\
-***==*** Igual a (patrón)\
-***=~*** Igual a (expresión regular)
+**Comparador de cadenas**
+| Comparador | Descripción |
+| --- | --- |
+| `>` | Mayor que |
+| `<` | Menor que |
+| `=` | Asignacion |
+| `!=` | Diferente a |
+| `==` | Igual a (patrón) |
+| `=~` | Igual a (expresión regular) |
 
-**Comparadores numéricos**\
-***-gt*** Greater than\
-***-lt*** Lower than\
-***-ge*** Greater or equal\
-***-le*** Lower or equal\
-***-eq*** Equal to\
-***-ne*** Not equal
+**Comparadores numéricos**
+| Comparador | Descripción |
+| --- | --- |
+| `-gt` | Greater than |
+| `-lt` | Lower than |
+| `-ge` | Greater or equal |
+| `-le` | Lower or equal |
+| `-eq` | Equal to |
+| `-ne` | Not equal |
 
 > [!NOTE]
 > [[ 001 = 1 ]] es o [[ 011 == 1 ]] falso (ya que compara cadenas de caracteres)\
 > mientras que [[ 001 -eq 1 ]] es cierto
 
 **Operadores booleanos**\
-**&&** And\
-**||** Or
+| Operador | Descripción |
+| --- | --- |
+| `&&` | And. Sólo si las dos condiciones se cumplen, devuelve True |
+| `||` | Or. Si una o ambas condiciones se cumplen, devuelve True |
 
 ### while y until
 
