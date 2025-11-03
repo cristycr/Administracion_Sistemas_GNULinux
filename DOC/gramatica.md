@@ -61,7 +61,7 @@ fi
 | Operador | Descripción |
 | --- | --- |
 | `&&` | And. Sólo si las dos condiciones se cumplen, devuelve True |
-| `||` | Or. Si una o ambas condiciones se cumplen, devuelve True |
+| `\|\|` | Or. Si una o ambas condiciones se cumplen, devuelve True |
 
 ### while y until
 
