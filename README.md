@@ -1,6 +1,6 @@
 # Bienvenido a mi repositorio de Linux!
 ![Tux using on a computer](assets/tux.gif)\
-Este proyecto ha nacido como un conjunto de apuntes personales durante mi actual formación en adminitración de sistemas, pero ha ido creciendo hasta convertirse en un recurso abierto para cualquiera que quiera aprender, practicar o enseñar sobre GNU/Linux.
+Este proyecto ha nacido como un conjunto de apuntes personales durante mi actual formación en administración de sistemas, pero ha ido creciendo hasta convertirse en un recurso abierto para cualquiera que quiera aprender, practicar o enseñar sobre GNU/Linux.
 
 # Qué vas a encontrar
 El repositorio recopila:
@@ -10,7 +10,7 @@ El repositorio recopila:
 * Documentación y apuntes sobre diferentes herramientas y utilidades
 * Cómo usar patrones de bash y expresiones regulares
 
-La idea es que sirva tanto de **guía de estudio** como de **referencia práctica**, especialmente para estudiantes de ciclos formativos, autodidactas o profesionalles que quieran reforzar sus conocimientos.
+La idea es que sirva tanto de **guía de estudio** como de **referencia práctica**, especialmente para estudiantes de ciclos formativos, autodidactas o profesionales que quieran reforzar sus conocimientos.
 
 # Colaboraciones
 Este es un proyecto **abierto a la comunidad**.\
