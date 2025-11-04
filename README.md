@@ -39,7 +39,7 @@ Si te ha servido de ayuda, considera dejar una :star: en el repositorio.
 ![Tux drinking cola](assets/tux_cola.gif)
 
 # Documentos de interés
-[Aprende al gramática de la Bash y Bash Scripting](DOC/gramatica.md)
+[Aprende la gramática de la Bash y Bash Scripting](DOC/gramatica.md)
 
 [Lista de comandos organizados por uso y dificultad](DOC/comandos.md)
 
