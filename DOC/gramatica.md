@@ -70,7 +70,12 @@ fi
 | `\|\|` | Or. Si una o ambas condiciones se cumplen, devuelve True |
 
 ### for
-
+**ejemplo de bucle for**
+```bash
+for (( i=0; i -lt 10; i++ )); do
+	echo "Hola";	
+done
+```
 ### select
 
 ### case
