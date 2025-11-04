@@ -1,5 +1,5 @@
 # Bienvenido a mi repositorio de Linux!
-![Tux using on a computer](assets/tux.gif)
+![Tux using on a computer](assets/tux.gif)\
 Este proyecyo ha nacido como un conjunto de apuntes personales durante mi actual formación en adminitración de sistemas, pero ha ido creciendo hasta convertirse en un recurso abierto para cualquiera que quiera aprender, practicar o enseñar sobre GNU/Linux.
 
 # Qué vas a encontrar
