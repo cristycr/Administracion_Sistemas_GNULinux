@@ -1,6 +1,6 @@
-# GRAMÁTICA DE LA SHELL
+# GRAMÁTICA DE LA BASH
 
-## ORDENES COMPUESTAS
+## Órdenes compuestas
 
 ### if
 
