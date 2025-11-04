@@ -200,3 +200,33 @@ Se asignan valores a los vectores mediante asignaciones compuestas de la forma _
 
 Cualquier elemento de un vector puede referenciarse mediante ${nombre[índice]}. Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.\
 Si _indice_ es @ o *, la palabra se expande a todos los miembros de _nombre_.
+
+# EXPANSIÓN
+
+## Expansión de llaves
+
+## Expansión de tilde
+
+## Expansión de parámetro
+
+## Sustitución de orden
+
+
+
+## Expansión aritmética
+La expansión aritmética permite interpretar una expresión aritmética y la sustitución de ésta por el resultado. El formato para la expansión aritmética es:
+```bash
+$((expresión))
+```
+Le _expresión_ se trata como si estuviera entre comillas dobles. Sin embargo, si dentro de los paréntesis aparece otra comilla doble, **Bash** no la interpreta de manera especial.
+
+Todos los elementos dentro de la expresión (como variables o comandos) se procesan primero mediante:
+- Expansión de parámetros
+- Expansión de cadenas
+- Sustitución de comandos
+- Eliminación de comillas
+
+Además, las expresiones aritméticas puede anidarse unas dentro de otras.\
+Luego, **Bash** evalúa la expresión siguiendo las reglas de **evaluación aritmética**. Si la expresión no es válida, **Bash** mostrará un mensaje de error y no reemplazará nada.
+
+## Sustitución de proceso

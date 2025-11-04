@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# Realizar un menu con select con las siguientes opciones
+## 1. Borrar la pantalla con clear
+## 2. Listar el contenido del directorio actual con ls
+## 3. Identificar al usuario actual con $USER
+## 4. Listar el contenido del directorio HOME del usuario actual con ls ~$USER
+## 5. Salir del script
+
+PS3="Introduce un número para realizar una acción: "
+
+select a in "Borrar la pantalla" "Listar el contenido del directorio actual" "¿Quién soy?" "Listar el contenido de mi HOME" "Salir"; do
+	if [[ $a == "Borrar la pantalla" ]]; then
+		clear;
+	fi
+done

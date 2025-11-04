@@ -1,0 +1,57 @@
+#! /bin/bash
+
+# Menu select con 5 opciones
+## 1. Mostrar el PATH del directorio actual con pwd
+## 2. Listar el contenido del directorio actual con ls
+## 3. Crear un subdirectorio en el directorio actual con mkdir
+## 4. Borrar un subdirectorio y su contenido del directorio actual con rm -r
+## 5. Salir del select con exit
+### Después de realizar cualquiera de las acciones, también sale del script automaticamente
+
+## 3. y 4. Usan read para recibir un directorio a borrar o crear.
+### Si la cadena recibida contiene caracteres que no sean
+### alfanumericos, no es valida.
+
+PS3="Elige qué operación quieres hacer: "
+
+select a in ver_ruta_actual listar_contenido crear_directorio borrar_directorio salir;
+	do
+		if [[ "$a" == "ver_ruta_actual" ]]; then
+			pwd;
+			exit;
+		fi
+
+		if [[ "$a" == "listar_contenido" ]]; then
+			ls;
+			exit;
+		fi
+
+		# Filtrar si el directorio cumple con la expresión regular
+		if [[ "$a" == "crear_directorio" ]]; then
+			read -p"Escribe el nombre del directorio: " crear;
+			if [[ "$crear" =~ ^[a-zA-Z0-9]+$ ]]; then
+				mkdir $crear;
+				echo "Directorio $crear creado";
+				exit;
+			else
+				echo "Nombre no valido. Solo puede contener valores alfanumericos";
+				exit;
+			fi
+		fi
+
+		if [[ "$a" == "borrar_directorio" ]]; then
+			read -p"Escribe el nombre del directorio que quieres borrar: " borrar;
+			if [[ "$borrar" =~ ^[a-zA-Z0-9]+$ ]]; then
+				rm -r $borrar;
+				echo "Directorio $borrar borrado";
+				exit;
+			else
+				echo "Nombre no valido. Solo puede contener valores alfanumericos"
+				exit;
+			fi
+		fi
+
+		if [[ "$a" == "salir" ]]; then
+			exit;
+		fi
+	done
