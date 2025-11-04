@@ -142,18 +142,18 @@ ${11}
 ## Parámetros especiales
 
 Sólo pueden referenciarse; no se permite asignarles nada.\
-`$*`
+`$*`\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando la expansión ocurre entre comillas dobles, representa una única cadena de texto, donde los parámetros se separan por la variable IFS. Si la variable IFS no está definida, por defecto almacena un espacio " ". IFS también puede estar vacía, y los parámetros se representarán juntos sin separador.\
 _"$1c$2c..."_
 
-`$@`
+`$@`\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando se efectúa entre comillas dobles, los parámetros posicionales se expande de esta manera:\
 _"$1" "$2"..._
 
-`$#`
+`$#`\
 Se expande al número de parámetros posicionales.
 
-`$?`
+`$?`\
 Se expande a un número que representa el estado de la ejecución más reciente, que suele ser un _exit_. Si devuelve 0, la ejecución ha salido bien. Si ha salido mal, se representa con un número del 1 al 100.
 ```bash
 function ERROR() {
@@ -163,24 +163,24 @@ function ERROR() {
 # En este caso, $? será 1.
 ```
 
-`$-`
+`$-`\
 Se expande a las opciones de la shell activas actualmente según se hayan especificado en la llamada, mediante la orden interna `set`, o las que haya puesto la misma shell (como la opción **-i**). Lo que quiere decir: igual que otros comandos, cuando hacemos una llamada a `bash`, podremos invocar una nueva bash dentro de la actual, donde pobremos añadir todas las opciones que queramos según lo que necesitemos (como podemos ver en `man bash`). Por lo tanto, la variable `$-` mostrará las opciones que está utilizando la bash actual.\
 Podemos además modificar las opciones de la bash actual con el comando `set`. Si no modificamos nada y ejecutamos una shell de forma normal, ésta se ejecutará con una serie de opciones por defecto.
 
-`$$`
+`$$`\
 Se expande al PID de la shell. En una subshell (), se expande al PID de la shell actual, no al de la subshell. Podemos ver el mismo resultado imprimiento la variable BASHPID `echo $BASHPID`.
 
-`$!`
+`$!`\
 Se expande al PID de la orden más recientemente ejecutada en segundo plano (asíncronamente). Para ejecutar un comando en segundo plano, podemos hacer uso del carácter especial **&** de la siguiente manera.\
 ```bash
 sleep 5&
 ```
 Si hacemos uso del `$!`, éste mostrara el PID de esta última orden.
 
-`$0`
+`$0`\
 Se expande al nombre de la shell o del bash script. Si la **bash** se llama con un fichero script, `$0` tomará como valor el nombre de ese fichero. Si **bash** se arranca con la opción `-c`, entonces `$0` tome el nombre del primer parámetro posicional si hay alguno presente. Si no, almacenará el nombre del script usado para llamar a la **bash**.
 
-`$_`
+`$_`\
 Se expande al último argumento del comando anterior o, en ciertos contextos, el nombre del último comando ejecutado. Se actualiza automáticamente después de cada comando de la shell.
 
 > [!NOTE]
