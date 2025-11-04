@@ -57,7 +57,7 @@ fi
 > [[ 001 = 1 ]] es o [[ 011 == 1 ]] falso (ya que compara cadenas de caracteres)\
 > mientras que [[ 001 -eq 1 ]] es cierto
 
-**Operadores booleanos**\
+**Operadores booleanos**
 | Operador | Descripción |
 | --- | --- |
 | `&&` | And. Sólo si las dos condiciones se cumplen, devuelve True |
