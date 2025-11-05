@@ -15,7 +15,7 @@ para analizar, buscar y reemplazar texto según reglas avanzadas.
 En conjunto, ambas herramientas permiten automatizar tareas de procesamiento de texto y\
 administración del sistema de manera rápida y precisa.
 
-## Patrones de coincidencia (globbing)
+## PATRONES DE COINCIDENCIA (GLOBBING)
 En Bash, los patrones (también llamados _globs_) se usan para comparar nombres de ficheros, cadenas y otros textos. No son expresiones regulares completas, pero tienen una sintaxis similar en algunos aspectos.
 
 ### Reglas básicas
