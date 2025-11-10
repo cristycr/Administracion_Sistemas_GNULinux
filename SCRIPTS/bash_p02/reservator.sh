@@ -19,7 +19,6 @@
 # Synopsis:
 ## reservator [-verbose] palabra_reservada
 
-reservada=("case" "do" "done" "elif" "else" "esac" "fi" "for" "function" "if" "in" "select" "then" "until" "while" "time");
 
 ## FUNCION DE ERRROR ##
 
@@ -40,35 +39,41 @@ function VERBOSE() {
 
 ## FUNCION RESERVADA ##
 function RESERVADA() {
-	echo "Verbose activado con palabra reservada: $1"
+	echo "Palabra reservada: $1"
 	exit;
 }
 
 
 if [[ $1 == "-verbose" ]]; then
-	for palabra in "${reservada[@]}"; do
-		if [[ $2 == "$palabra" ]]; then
-			## LLAMA A LA FUNCION VERBOSE
-			VERBOSE;
-		elif [[ $2 == "" ]]; then
-			echo "Debes introducir una palabra reservada.";
-			ERROR;
-		else
-			echo "$2 no es una de las palabras reservadas.";
-			ERROR;
-		fi
-	done
+	case $2 in
+
+	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
+		VERBOSE $2;
+	  ;;
+
+	  "")
+		echo "Debes introducir una palabra reservada.";
+		ERROR;
+	  ;;
+
+	  *)
+		echo "$2 no es una de las palabras reservadas.";
+		ERROR;
+	  esac
 else
-	for palabra in "${reservada[@]}"; do
-		if [[ $1 == "$palabra" ]]; then
-			## LLAMA A LA FUNCION RESERVADA
-			RESERVADA;
-		elif [[ $1 == "" ]]; then
-			echo "Debes introducir una palabra reservada.";
-			ERROR;
-		else
-			echo "$1 no es una de las palabras reservadas.";
-			ERROR;
-		fi
-	done
+	case $1 in
+
+	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
+		RESERVADA $1;
+	  ;;
+
+	  "")
+		echo "Debes introducir una palabra reservada.";
+		ERROR;
+	  ;;
+
+	  *)
+		echo "$1 no es una de las palabras reservadas.";
+		ERROR;
+	  esac
 fi
