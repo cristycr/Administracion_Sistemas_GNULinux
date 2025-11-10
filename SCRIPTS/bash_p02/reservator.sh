@@ -24,9 +24,25 @@
 
 function ERROR() {
 cat << EOF
-USAGE:
+
+SYNOPSIS:
 	$0 [-verbose] palabra_reservada
-	palabra_reservada: case do done elif else esac fi for function if in select then until while time
+
+DESCRIPTION:
+	Busca en todos los ficheros contenidos en /etc/ y que respondan al tipo shell script
+	(de cualquiera de sus clases) la aparición de palabra_reservada como palabra aislada
+	(no como subcadena). Si se llama en vacío, con más parámetros de los obligatorios o
+	con parámetros incorrectos, presentará por la salida estandard un texto explicativo
+	de cómo se usa el script y finaliza.
+
+========================================================================================
+
+	palabra_reservada:
+	case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time
+
+EXAMPLE:
+	$0 case
+	$0 -verbose function
 EOF
 exit 1;
 }
@@ -43,37 +59,35 @@ function RESERVADA() {
 	exit;
 }
 
-
 if [[ $1 == "-verbose" ]]; then
-	case $2 in
+	if [[ $# -eq 2 ]]; then
+		case $2 in
+	  	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
+			VERBOSE $2;
+	  	  ;;
 
-	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
-		VERBOSE $2;
-	  ;;
-
-	  "")
-		echo "Debes introducir una palabra reservada.";
+	  	  *)
+			echo "$2 no es una de las palabras reservadas.";
+			ERROR;
+	  	  esac
+	else
+		echo "Debes introducir una palabra reservada como mínimo y máximo.";
 		ERROR;
-	  ;;
-
-	  *)
-		echo "$2 no es una de las palabras reservadas.";
-		ERROR;
-	  esac
+	fi
 else
-	case $1 in
+	if [[ $# -eq 1 ]]; then
+		case $1 in
 
-	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
-		RESERVADA $1;
-	  ;;
+	  	  case | do | done | elif | else | esac | fi | for | function | if | in | select | then | until | while | time)
+			RESERVADA $1;
+	  	  ;;
 
-	  "")
-		echo "Debes introducir una palabra reservada.";
+	  	  *)
+			echo "$1 no es una de las palabras reservadas.";
+			ERROR;
+	  	  esac
+	else
+		echo "Debes introducir una palabra reservada como mínimo y máximo.";
 		ERROR;
-	  ;;
-
-	  *)
-		echo "$1 no es una de las palabras reservadas.";
-		ERROR;
-	  esac
+	fi
 fi
