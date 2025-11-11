@@ -49,13 +49,13 @@ exit 1;
 
 ## FUNCION VERBOSE ##
 function VERBOSE() {
-	echo "Verbose activado con palabra reservada: $1"
+	find /etc -type f -exec file {} + 2>/dev/null | grep -i 'shell script' | cut -d: -f1 | xargs grep -nrsw $1;
 	exit;
 }
 
 ## FUNCION RESERVADA ##
 function RESERVADA() {
-	echo "Palabra reservada: $1"
+	find /etc -type f -exec file {} + 2>/dev/null | grep -i 'shell script' | cut -d: -f1 | xargs grep -nrsw $1 | cut -d: -f1,2;
 	exit;
 }
 
