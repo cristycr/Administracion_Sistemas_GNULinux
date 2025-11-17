@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# Mostrar por la salida estándar los grupos a los que pertenecen
+# los usuarios pasados como parámetros posicionales
+
+for i in $@; do
+	grupo=$(groups $i | cut -d: -f2);
+	echo "El usuario $i pertenece al/los grupos: $grupo";
+done;

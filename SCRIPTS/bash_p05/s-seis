@@ -1,0 +1,13 @@
+#! /bin/bash
+
+read -p "Introduce el usuario que quieras saber si está conectado al sistema: " user;
+busca=$(who | cut -f1 -d" " | grep "$user")
+
+echo "Buscando a $user en el sistema..."
+
+if [ "$user" = "$busca" ];then
+	echo "El usuario $user está conectado al sistema"
+else
+	echo "El usuario no está conectado al sistema"
+fi
+
