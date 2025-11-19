@@ -30,7 +30,7 @@ fi
 | `[[ -f archivo ]]` | Comprueba si es un fichero |
 | `[[ -d archivo ]]` | Comprueba si es un directorio |
 | `[[ -r archivo ]]` | Comprueba si existe y permite lectura |
-| `[[ -w archivo ]]` | Comprueba si existe y permite lectura |
+| `[[ -w archivo ]]` | Comprueba si existe y permite escritura |
 | `[[ -x archivo ]]` | Comprueba si existe y permite ejecucion |
 | `[[ -s archivo ]]` | Comprueba si existe y el tamaño es mayor a cero |
 | `[[ -z archivo ]]` | Comprueba si existe y el tamaño es cero |
