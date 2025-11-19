@@ -112,7 +112,7 @@ function saludar() {
 
 saludar
 ```
-
+[Aquí tienes una serie de ejercicios para practicar funciones resultos](../SCRIPTS/bash_p08)
 # COMENTARIOS
 
 # ENTRECOMILLADO
