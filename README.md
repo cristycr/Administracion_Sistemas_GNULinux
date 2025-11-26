@@ -1,5 +1,5 @@
 # Bienvenido a mi repositorio de Linux!
-![Tux using on a computer](assets/tux.gif)\
+![Tux using a computer](assets/tux.gif)\
 Este proyecto ha nacido como un conjunto de apuntes personales durante mi actual formación en administración de sistemas, pero ha ido creciendo hasta convertirse en un recurso abierto para cualquiera que quiera aprender, practicar o enseñar sobre GNU/Linux.
 
 # Qué vas a encontrar
@@ -26,7 +26,7 @@ Toda contribución, por pequeña que sea, es bienvenida.
 El contenido de este repositorio se distribuye bajo la Licencia Creative Commons Atribución (CC BY 4.0).
 Esto significa que:
 * Puedes **usar, copiar, modificar y compartir** libremente el contenido.
-* Puedes emplearlo para **enseñar, crear materiales o apuntes**, incluso con fines comerciles.
+* Puedes emplearlo para **enseñar, crear materiales o apuntes**, incluso con fines comerciales.
 * Solo se pide que **menciones y enlaces el repositorio original** como fuente.
 
 # Nota final
@@ -39,6 +39,8 @@ Si te ha servido de ayuda, considera dejar una :star: en el repositorio.
 ![Tux drinking cola](assets/tux_cola.gif)
 
 # Documentos de interés
+Puedes encontrar estos documentos en el directorio DOC.
+
 [Aprende la gramática de la Bash y Bash Scripting](DOC/gramatica.md)
 
 [Lista de comandos organizados por uso y dificultad](DOC/comandos.md)

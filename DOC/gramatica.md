@@ -8,9 +8,9 @@
 
 ## Órdenes compuestas
 
-### if
+### IF
 
-**ejemplo de if, elif y else:**
+**Ejemplo de if, elif y else:**
 ```bash
 if [[ -f $FILE ]]; then
 	echo "FICHERO";
@@ -60,37 +60,39 @@ fi
 | `-ne` | Not equal |
 
 > [!NOTE]
-> [[ 001 = 1 ]] es o [[ 011 == 1 ]] falso (ya que compara cadenas de caracteres)\
-> mientras que [[ 001 -eq 1 ]] es cierto
+> Tanto [[ 001 = 1 ]] como [[ 011 == 1 ]] devuelven FALSE (ya que comparan cadenas de caracteres)\
+> Mientras que [[ 001 -eq 1 ]] devolverá TRUE (ya que estamos usando los comparadores numéricos)
 
 **Operadores booleanos**
 | Operador | Descripción |
 | --- | --- |
-| `&&` | And. Sólo si las dos condiciones se cumplen, devuelve True |
-| `\|\|` | Or. Si una o ambas condiciones se cumplen, devuelve True |
+| `&&` | AND. Sólo si las dos condiciones se cumplen, devuelve TRUE |
+| `\|\|` | OR. Si una o ambas condiciones se cumplen, devuelve TRUE |
 
-### for
-**ejemplo de bucle for**
+### FOR
+**Ejemplo de bucle for**
 ```bash
 for (( i=0; i -lt 10; i++ )); do
 	echo "Hola";	
 done
 ```
-### select
+### SELECT
 
-### case
+### CASE
 
-### while y until
+### WHILE y UNTIL
 
-**ejemplo de while:**
+**Ejemplo de while y ejemplo de until**
 ```bash
 contador=0
 
+#while
 while (( $contador < 11 )); do
 	((contador++));
 	echo "Hola mundo";
 done;
 
+#until
 until (( $contador == 10 )); do
 	((contador++));
 	echo "Hola mundo";
@@ -98,13 +100,13 @@ done;
 ```
 
 > [!NOTE]
-> Aunque la salida será la misma, la diferencia reside en que\
-> while se repetirá mientras la condición se siga cumpliendo y\
-> until se repetirá hasta que la condición se cumpla
+> Aunque la salida será la misma, la diferencia reside en:\
+> - While se repetirá **mientras** que la condición se cumpla\
+> - Until se repetirá **hasta** que la condición se cumpla
 
-### function
+### FUNCTION
 
-**ejemplo de función:**
+**Ejemplo de función**
 ```bash
 function saludar() {
 	echo "Hola mundo!";
@@ -118,25 +120,25 @@ saludar
 # ENTRECOMILLADO
 
 # PARÁMETROS
-En lo que se refiere a la shell, una **variable** es un parámetro identificado por un nombre
+En lo que se refiere a la shell, una **variable** es un parámetro identificado por un nombre.
 
-Se le asignan valores mediante esta sentencia sencilla
+Se le asignan valores mediante esta sentencia sencilla:
 ```bash
 nombre=[valor]
 ```
-Si no definimos un valor, ésta se asigna vacía
+Si no definimos un valor, ésta se asigna vacía.
 
 ## Parámetros posicionales
 
 Éstos están representados con números enteros, distintos de 0.\
-Se asignan a partir de los argumentos de la shell cuando ésta es llamada\
-**ejemplo:**
+Se asignan a partir de los argumentos de la shell cuando ésta es llamada.\
+**Ejemplo:**
 ```bash
 ls -l -a
 
 # Los parámetros posicionales son los siguientes
-$1 = -l
-$2 = -a
+# $1 -> -l
+# $2 -> -a
 ```
 
 Si el parámetro posicional cuenta con más de un dígito, debe estar aislado con llaves.
@@ -144,9 +146,14 @@ Si el parámetro posicional cuenta con más de un dígito, debe estar aislado co
 ${11}
 ```
 
+Ésto es necesario porque la shell puede interpretar que estamos concatenando caracteres, de forma que si escribimos $11, nos devolvería el valor de $1 pegado al dígito 1.\
+Imaginando que `$1 = hola`, si hiciéramos un echo de esta forma: `echo $11`, tendríamos como resultado `hola1`.\
+
+De igual manera, ésto se aplica a cualquier variable. Si queremos concatenar una variable llamada `$var` con la palabra "texto", no vale con escribir simplemente `echo $vartexto`, ya que la bash buscará una variable con ese nombre exacto, sino que tenemos que hacer esto: `echo ${var}texto`.
 ## Parámetros especiales
 
-Sólo pueden referenciarse; no se permite asignarles nada.\
+Sólo pueden referenciarse; no se permite asignarles valores.
+
 `$*`\
 Se expande a los parámetros posicionales, empezando por el primero. Cuando la expansión ocurre entre comillas dobles, representa una única cadena de texto, donde los parámetros se separan por la variable IFS. Si la variable IFS no está definida, por defecto almacena un espacio " ". IFS también puede estar vacía, y los parámetros se representarán juntos sin separador.\
 _"$1c$2c..."_
@@ -189,22 +196,32 @@ Se expande al nombre de la shell o del bash script. Si la **bash** se llama con 
 Se expande al último argumento del comando anterior o, en ciertos contextos, el nombre del último comando ejecutado. Se actualiza automáticamente después de cada comando de la shell.
 
 > [!NOTE]
-> Tanto `$@` como `$*`, cuando se expanden sin comillas dobles,
-> devuelven por la salida estándar el mismo resultado.
-
+> Tanto `$@` como `$*`, cuando se expanden sin comillas dobles, devuelven por la salida estándar el mismo resultado.
 
 ## Variables de la shell
-La shell tiene una serie de variables que se definen automáticamente. Éstas variables se conocen como variables de entorno. Existe un comando interno de bash para visualizar todas las variables de entorno en el momento que se ejecuta. Este comando es `set`.\
-[Para ver la lista completa de variables de entorno de la Bash, ve aquí](env.md)
+La shell tiene una serie de variables que se definen automáticamente. Éstas se conocen como variables de entorno. Existe un comando interno de bash para visualizar todas las variables de entorno en el momento que se ejecuta. Este comando es `set`.\
+[Para ver la lista completa de variables de entorno de la Bash, visita este documento.](env.md)
 
 
-## Vectores
+## Vectores (arrays)
 En bash, las variables son de tipo _vector monodimensional_. Cualquier variable puede usarse como un vector. Igual que en otros lenguajes de programación, los elementos se indexan utilizando números enteros, empezando por el cero.
 
-Se asignan valores a los vectores mediante asignaciones compuestas de la forma _nombre=(valor1 ... valorn)_, donde cada valor es de la forma _[índice]=cadena_. Sólo _cadena_ es necesario. Si se suministrara en la asignación el índice entre corchetes además de _cadena_, se asignará a ese índice concreto.
+Se asignan valores a los vectores mediante asignaciones compuestas de la forma `vector=(valor1 ... valorn)` donde cada valor es representado con un índice, como dijimos antes. Para crear el vector, sólo necesitamos el valor; no es necesario índicar a qué índice corresponde para ello, pero se puede hacer.\
+En la asignación de valores, indicaríamos el índice entre corchetes además del valor. Entonces ese valor se asignará a ese índice concreto.
 
-Cualquier elemento de un vector puede referenciarse mediante ${nombre[índice]}. Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.\
-Si _indice_ es @ o *, la palabra se expande a todos los miembros de _nombre_.
+Cualquier elemento de un vector puede referenciarse mediante `${vector[índice]}`, por ejemplo `$@[1]` que, como vimos antes, correspondería a la variable `$1`. Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.\
+Si _índice_ es @ o *, la palabra se expande a todos los elementos del vector.
+**Ejemplo de vectores**
+```bash
+vector=(hola me llamo Tux);
+
+echo ${vector[0]}; # Esto devuelve 'hola'
+
+echo ${vector[@]}; # Esto devuelve 'hola me llamo Tux', igual que si usáramos ${vector[*]}
+
+# EXTRA -->
+echo ${#vector[@]} # Si añadimos '#' delante. Nos devolverá la longitud del vector, o sea, el número de elementos que lo componen.
+```
 
 # EXPANSIÓN
 
