@@ -206,11 +206,15 @@ La shell tiene una serie de variables que se definen automáticamente. Éstas se
 ## Vectores (arrays)
 En bash, las variables son de tipo _vector monodimensional_. Cualquier variable puede usarse como un vector. Igual que en otros lenguajes de programación, los elementos se indexan utilizando números enteros, empezando por el cero.
 
-Se asignan valores a los vectores mediante asignaciones compuestas de la forma `vector=(valor1 ... valorn)` donde cada valor es representado con un índice, como dijimos antes. Para crear el vector, sólo necesitamos el valor; no es necesario índicar a qué índice corresponde para ello, pero se puede hacer.\
-En la asignación de valores, indicaríamos el índice entre corchetes además del valor. Entonces ese valor se asignará a ese índice concreto.
+Se asignan valores a los vectores mediante asignaciones compuestas de la forma `vector=(valor1 ... valorn)` donde cada valor es representado con un índice, como dijimos antes.\
 
-Cualquier elemento de un vector puede referenciarse mediante `${vector[índice]}`, por ejemplo `$@[1]` que, como vimos antes, correspondería a la variable `$1`. Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.\
-Si _índice_ es @ o *, la palabra se expande a todos los elementos del vector.
+Para crear el vector, sólo necesitamos el valor; no es necesario índicar a qué índice corresponde para ello, pero se puede hacer. En la asignación de valores, indicaríamos el índice entre corchetes además del valor. Entonces ese valor se asignará a ese índice concreto.
+
+Cualquier elemento de un vector puede referenciarse mediante `${vector[índice]}`, por ejemplo `$@[1]` que, como vimos antes, correspondería a la variable `$1`.\
+Las llaves son necesarias para evitar conflictos con la expansión de nombre de caminos.
+
+Si _índice_ es @ o *, se expande a todos los elementos del vector.
+
 **Ejemplo de vectores**
 ```bash
 vector=(hola me llamo Tux);
