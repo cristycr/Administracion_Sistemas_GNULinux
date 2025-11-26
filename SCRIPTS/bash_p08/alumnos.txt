@@ -1,0 +1,10 @@
+Nombre|Clase|Promedio
+Luis|6to|3
+Carlos|6to|14
+Clarisa|6to|16
+Jorge|6to|18
+Pedro|6to|8
+Damian|5to|10
+Daniel|5to|11
+Pablo|5to|7
+Victor|5to|14
