@@ -1,0 +1,6 @@
+Juan Juan|46290|Valencia 
+Olivia Perez|24200|León 
+Carlos Izaguirre|24200|León 
+Alejandro Arevalo|24100|León 
+Jorge Olvido|26350|La Rioja 
+Jose Martinez|26350|La Rioja
