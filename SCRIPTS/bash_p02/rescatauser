@@ -1,0 +1,45 @@
+#! /bin/bash
+
+# Restaura la copia de seguridad del contenido del directorio $HOME de los usuarios que se pasen como parámetros posicionales
+
+directorio=/var/tmp/homebakases;
+cont=0;
+spinner='-\|/';
+
+for user in $@; do
+	id $user &>/dev/null;
+	if [[ $? -ne 0 ]]; then
+		echo "El usuario $user no existe.";
+		continue;
+	else
+		ls -l /home | grep $user &>/dev/null;
+		if [[ $? -ne 0 ]]; then
+			echo "El usuario $user no tiene directorio HOME";
+		else
+			last_backup=$(ls -t "$directorio"/*"$user" 2>/dev/null | head -1)
+			echo $last_backup;
+			if [[ -z "$last_backup" ]]; then
+				echo "No existe ninguna copia de seguridad del usuario $user";
+			else
+				tar -xzf "$last_backup" -C "/home/$user" &>/dev/null &
+				pid=$!;
+
+				i=0;
+				while kill -0 "$pid" 2>/dev/null; do
+					printf "\rRestaurando $user... %c	" "${spinner:i++%4:1}";
+					sleep 0.1
+				done
+
+				wait "$pid"
+
+				if [[ $(id -u) -eq 0 ]]; then
+					chown -R "$user:$user" "/home/$user";
+					printf "\rRestauración completada para el usuario $user.\n";
+				else
+					echo "";
+					echo "Aviso: No se podrá cambiar la propiedad. Ejecuta como root para poder hacer esta acción.";
+				fi
+			fi
+		fi
+	fi
+done

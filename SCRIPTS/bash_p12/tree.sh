@@ -27,7 +27,7 @@ function FILES() {
 		tabulacion = ($1 - 1)*4
 		simbolo = ($2 == "d" ? "+" : "-")
 
-		printf "%*s%s %s\n", tabulacion, "", simbolo, $3
+		printf "%*s%s%s\n", tabulacion, "", simbolo, $3
 
 		if($2 == "d") dirs++
 		else if($2 == "f") fich++

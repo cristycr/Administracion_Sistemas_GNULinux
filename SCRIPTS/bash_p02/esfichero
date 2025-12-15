@@ -1,0 +1,68 @@
+#! /bin/bash
+
+# Busca archivos en el sistema de ficheros y extrae sus atributos.
+
+# Admite hasta 5 parámetros (puedes ser menos pero no más)
+# Cada uno solo puede contener carácteres alfanuméricos
+
+function ERROR() {
+cat << EOF
+
+SINOPSIS
+	$0 [archivo [archivo] archivo] archivo [archivo]]]]]
+
+USO
+	Introduce hasta un máximo de 5 ficheros.
+	Los ficheros no pueden contener carácteres especiales, siendo los carácteres alfanuméricos los únicos permitidos para los nombres de los ficheros introducidos.
+	Se devolverá por pantalla las concurrencias de ficheros con el nombre dado que cumplan estos requisitos:
+		- Permisos de lectura para propietario, grupo y otros.
+		- Debe ser un fichero regular.
+
+	Buscará desde raíz "/", por lo que puede tardar unos segundos en completar la búsqueda.
+
+EJEMPLOS INVÁLIDOS
+
+	$0 datos.txt					--> Caracter especial "."
+	$0 ejercicio_1 ejercicio3			--> Caracter especial "_"
+	$0 datos datos2 datos3 datos4 datos5 datos6	--> Demasiado parámetros: "6"
+
+EJEMPLOS VÁLIDOS
+
+	$0 datos fichero1 fichero42			--> Sólo alfanuméricos y dentro del rango de 5 parámetros
+
+EOF
+}
+
+if (( ${#@} == 0 )); then
+	echo "Faltan parámetros posicionales.";
+	ERROR;
+fi
+
+if (( ${#@} > 5 )); then
+	echo "Demasiados parámetros posicionales.";
+	ERROR;
+fi
+
+for param in $@; do
+	if [[ ! $param =~ ^[[:alnum:]]+$ ]]; then
+		echo "$param no es alfanumérico.";
+		ERROR;
+	fi
+done
+
+## Pasados estos filtros, los ficheros pasados son alfanuméricos e iguales o menos a 5, pero no nulos
+# Llamado con más de 5 param, o param incorrectos, aparecerá un mensaje explicativo para el uso del script.
+## Se llama a la función ERROR para mostrar dicho mensaje.
+
+# Busca desde raíz si existe el fichero regular y tiene permisos de lectura para propietario, grupo y otros
+
+for param in $@; do
+	echo "Ocurrencias de $param en el sistema ===========================================";
+	echo "";
+	fichero=$(find / -type f -name "$param" -perm -444 2>/dev/null);
+
+	if [[ -n $fichero ]]; then
+		ls -l $fichero;
+	fi
+	echo "";
+done

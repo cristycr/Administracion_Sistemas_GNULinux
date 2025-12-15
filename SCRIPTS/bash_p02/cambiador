@@ -1,0 +1,38 @@
+#! /bin/bash
+
+# Cambia permisos de forma recursiva
+
+
+function ERROR() {
+cat << EOF
+SINOPSIS
+	$0 permisos_modo_numerico
+
+USO
+	Debe suministrarse un único número de 3 dígitos con valores comprendidos entre 000 y 777 en base 8.
+EOF
+exit 1;
+}
+
+user=$(whoami);
+
+if [[ $user == "root" ]]; then
+	echo "El usuario root no puede ejecutar este script.";
+fi
+
+if [[ ${#@} -gt 1 ]]; then
+	echo "Demasiados parámetros.";
+	ERROR;
+elif [[ ${#@} -lt 1 ]]; then
+	echo "Faltan el parámetro de permisos_modo_numerico.";
+	ERROR;
+fi
+
+if [[ $1 =~ ^[0-7]{3}$ ]]; then
+	find $HOME -type f -user $user -exec chmod $1 {} \;
+	echo "Se han cambiado los permisos de todos los ficheros del usuario en $HOME a $1.";
+	exit 0;
+else
+	echo "El número $1 no es un valor de permisos_modo_numerico válido.";
+	ERROR;
+fi

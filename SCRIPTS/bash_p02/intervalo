@@ -1,0 +1,103 @@
+#! /bin/bash
+
+# Realiza cálculos aritméticos sobre constantes predeterminadas.
+
+# Ofrece un menú con 21 opciones. De la 1 a la 20 son letras correlativas del abecedario, la 21 es "terminar".
+# Si es entre el 1-10 se imprime por la salida estándar el cuadrado; del 11-20, el cubo.
+
+# Posición 21 finaliza el programa. Si se introduce un valor no recogido, vuelve a preguntar
+
+
+PS3="Elige un número: ";
+
+options=("a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "ñ" "o" "p" "q" "r" "s" "terminar");
+
+select opt in "${options[@]}"
+do
+	case $opt in
+		"a")
+			echo $((1*1));
+			exit 0;
+		;;
+		"b")
+			echo $((2*2));
+			exit 0;
+		;;
+		"c")
+			echo $((3*3));
+			exit 0;
+		;;
+		"d")
+			echo $((4*4));
+			exit 0;
+		;;
+		"e")
+			echo $((5*5));
+			exit 0;
+		;;
+		"f")
+			echo $((6*6));
+			exit 0;
+		;;
+		"g")
+			echo $((7*7));
+			exit 0;
+		;;
+		"h")
+			echo $((8*8));
+			exit 0;
+		;;
+		"i")
+			echo $((9*9));
+			exit 0;
+		;;
+		"j")
+			echo $((10*10));
+			exit 0;
+		;;
+		"k")
+			echo $((11*11*11));
+			exit 0;
+		;;
+		"l")
+			echo $((12*12*12));
+			exit 0;
+		;;
+		"m")
+			echo $((13*13*13));
+			exit 0;
+		;;
+		"n")
+			echo $((14*14*14));
+			exit 0;
+		;;
+		"ñ")
+			echo $((15*15*15));
+			exit 0;
+		;;
+		"o")
+			echo $((16*16*16));
+			exit 0;
+		;;
+		"p")
+			echo $((17*17*17));
+			exit 0;
+		;;
+		"q")
+			echo $((18*18*18));
+			exit 0;
+		;;
+		"r")
+			echo $((19*19*19));
+			exit 0;
+		;;
+		"s")
+			echo $((20*20*20));
+			exit 0;
+		;;
+		"terminar")
+			exit 0;
+		;;
+	esac
+done
+

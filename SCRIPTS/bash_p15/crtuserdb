@@ -1,0 +1,81 @@
+#! /bin/bash
+
+# DEFINICIÓN DE VARIABLES ----------------------------------
+name=$1/crtuserdb.name;
+group=$1/crtuserdb.group;
+shells=$1/crtuserdb.shells;
+candidato=$1/crtuserdb.candidato;
+
+UID_MIN=$(grep ^UID_MIN /etc/login.defs | awk '{print $2}');
+UID_MAX=$(grep ^UID_MAX /etc/login.defs | awk '{print $2}');
+i=$UID_MIN;
+
+# CONTROL DE ERRORES ---------------------------------------
+if [[ $1 == "" ]]; then
+	echo "Error. Debes introducir un directorio.";
+	exit 1;
+fi
+
+if [[ ! -e $1 || ! -d $1 ]]; then
+	echo "Error. $1 no es un directorio válido o no existe.";
+	exit 1;
+fi
+
+if [[ ! -e $name || ! -e $group || ! -e $shells ]]; then
+	echo "Error. Alguno de los ficheros necesarios no existe en el directorio elegido.";
+	exit 1;
+fi
+
+# FUNCIÓN PARA CONSEGUIR LOS UIDS DISPONIBLES -------------
+
+function FREE_UIDS() {
+	while getent passwd $i >/dev/null; do
+		((i++));
+	done
+
+	if [[ $i -gt $UID_MAX ]]; then
+		echo "Error. UID_MAX permitido excedido.";
+		exit 1;
+	fi
+
+	new_uid=$i;
+	((i++));
+}
+
+# DECLARACIÓN Y ASIGNACIÓN DE LOS CAMPOS ------------------
+
+> $candidato;
+
+for user in $(cat $name); do
+# Campo 1 ----------------------
+campo1=$user;
+
+# Campo 2 ----------------------
+campo2="x";
+
+# Campo 3 ----------------------
+FREE_UIDS;
+campo3=$new_uid;
+
+# Campo 4 ----------------------
+check_grupo=$(grep -w $user $group | cut -d: -f2);
+if grep -w "^$user" /etc/group; then
+	campo4=$(grep -w "^$user" /etc/group | cut -d: -f3);
+else
+	campo4=$(grep -w staff /etc/group | cut -d: -f3);
+fi
+
+# Campo 6 ----------------------
+campo6="/home/$user";
+
+# Campo 7 ----------------------
+if (( $campo3 % 2 != 0 )); then
+	campo7=$(grep 1 $shells | cut -d: -f2);
+else
+	campo7=$(grep 2 $shells | cut -d: -f2);
+fi
+
+# INSERTAR EN EL FICHERO CANDIDATO -------------------------
+echo $campo1:$campo2:$campo3:$campo4::$campo6:$campo7 >> $candidato;
+
+done

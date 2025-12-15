@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# Limpia la pantalla y lista el contenido del directorio $HOME
+
+clear;
+
+ls -l $HOME | less;

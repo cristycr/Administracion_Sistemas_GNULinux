@@ -1,0 +1,53 @@
+#! /bin/bash
+
+# Muestra información de usuairo. Debe ser ejercutado como superusuario.
+
+# Sinopsis -> existe usuario
+
+
+
+#if [[ $(whoami) != "root" ]]; then
+#	ERROR;
+#	exit 1;
+#fi
+
+function ERROR() {
+cat << EOF
+SINOPSIS
+	$0 [usuario]
+
+Debes introducir un único usuario. En caso de que se reciba más de un parámetro, el único usado será el primero y el resto serán ignorados.
+También debes tener en cuanta que debes ser root para poder ejecutar este comando.
+EOF
+exit 1;
+}
+
+if [[ ${#@} == 0 ]]; then
+	ERROR;
+fi
+
+id $1 &>/dev/null
+
+if [[ $? != "0" ]]; then
+	echo "El usuario $1 no existe.";
+	exit 1;
+else
+	home=$(grep "^$1" /etc/passwd | cut -d: -f6);
+	uid=$(grep "^$1" /etc/passwd | cut -d: -f3);
+	gid=$(grep "^$1" /etc/passwd | cut -d: -f4);
+	group=$(grep $gid /etc/group | cut -d: -f1);
+	shell=$(grep "^$1" /etc/passwd | cut -d: -f7);
+	pass=$(grep $1 /etc/shadow | cut -d: -f2);
+
+	if [[ $pass == "*" || $pass == "!*" || $pass == "!" || $pass == "!!" || $pass == "" ]]; then
+		has_pass=NO;
+	else
+		has_pass=SI;
+	fi
+
+	echo "Directorio de trabajo: $home";
+	echo "UID del usuario: $uid";
+	echo "Nombre del grupo principal: $group";
+	echo "Archivo de inicio al sistema: $shell";
+	echo "¿Tiene password asignada? $has_pass";
+fi

@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# Realiza operaciones aritméticas concretas.
+
+# Synopsis -> aritmetico numero
+
+if (( ${#@} != 1 )); then
+	echo "Debes introducir un ÚNICO número entero";
+	exit 1;
+fi
+
+if ! [[ $1 =~ ^[[:digit:]]+$ ]]; then
+	echo "Debes introducir un número entero";
+	exit 1;
+fi
+
+multi=$(( $1 * $1 ));
+suma=$(( $1 + $1 ));
+
+echo "$1 + $1: $suma";
+echo "$1 x $1: $multi";

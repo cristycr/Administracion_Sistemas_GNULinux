@@ -1,0 +1,7 @@
+contable:x:1002:50::/home/contable:/bin/sh
+gerente:x:1003:50::/home/gerente:/bin/bash
+director:x:1004:50::/home/director:/bin/sh
+operador:x:1005:50::/home/operador:/bin/bash
+ventas:x:1006:50::/home/ventas:/bin/sh
+compras:x:1007:50::/home/compras:/bin/bash
+almacen:x:1008:50::/home/almacen:/bin/sh

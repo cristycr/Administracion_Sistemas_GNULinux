@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# Lista los parámetros posicionales introducidos
+
+param=($@);
+
+for (( i=0; i < $#; i++ )); do
+	echo "El parámetro $((i+1)) es: ${param[i]}";
+done

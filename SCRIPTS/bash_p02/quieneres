@@ -1,0 +1,13 @@
+#! /bin/bash
+
+# Identifica al usuario
+
+user=$(whoami);
+
+if [[ $user == "root" ]]; then
+	echo "Eres el administrador del sistema. Tienes todos los privilegios.";
+	exit 0;
+else
+	echo "Eres un usuario ordinario. No tienes privilegios de administración.";
+	exit 0;
+fi

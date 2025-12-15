@@ -1,0 +1,26 @@
+#! /bin/bash
+
+cat << EOF > $1/crtuserdb.name
+contable
+gerente
+director
+operador
+ventas
+compras
+almacen
+EOF
+
+cat << EOF > $1/crtuserdb.group
+contable:contable
+gerente:gerente
+director:director
+operador:operador
+ventas:ventas
+compras:compras
+almacen:almacen
+EOF
+
+cat << EOF > $1/crtuserdb.shells
+1:/bin/bash
+2:/bin/sh
+EOF

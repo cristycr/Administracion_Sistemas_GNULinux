@@ -1,0 +1,51 @@
+#! /bin/bash
+
+# Realiza una copia de seguridad del contenido del directorio HOME de los usuarios que se pasen como parámetros posicionales
+
+function ERROR() {
+cat << EOF
+SINOPSIS
+	$0 usuario...
+
+OPCIONES
+	Introduce tantos usuarios como se quiera. Por cada usuario se hará una copia de seguridad de su directorio de trabajo.
+EOF
+exit 1;
+}
+
+directorio=/var/tmp/homebakases;
+cont=0;
+spinner='-\|/';
+
+
+mkdir $directorio &>/dev/null;
+
+for user in $@; do
+	id $user &>/dev/null;
+	if [[ $? -ne 0 ]]; then
+		echo "El usuario $user no existe.";
+		continue;
+	else
+		ls -l /home | grep $user &>/dev/null;
+		if [[ $? -ne 0 ]]; then
+			echo "El usuario $user no tiene directorio HOME";
+		else
+			((cont++));
+			fecha=$(date +%Y-%m-%d-%H-%M);
+			tar -czf "$directorio/$fecha-$user" "/home/$user" &>/dev/null &
+			pid=$!;
+
+			i=0;
+			while kill -0 "$pid" 2>/dev/null; do
+				printf "\rCreando copia de seguridad de $user... %c	" "${spinner:i++%4:1}";
+				sleep 0.1
+			done
+
+			wait "$pid"
+			printf "\rCopia de $user terminada.	\n";
+		fi
+	fi
+done
+
+echo "Usuarios pasados como parámetro: $#";
+echo "Usuarios a los que se les ha hecho la copia de seguridad: $cont";

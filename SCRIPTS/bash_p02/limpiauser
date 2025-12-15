@@ -1,0 +1,49 @@
+#! /bin/bash
+
+# Elimina las copias de seguridad realizadas con el script salvauser que cumplen con un determinado criterio de antiguedad.
+
+# Sinopsis
+## Fecha => AAAA-MM-DD
+
+if [[ $# -lt 1 ]]; then
+	echo "Uso: $0 FECHA(AAAA-MM-DD)";
+	exit 1;
+fi
+
+directorio=/var/tmp/homebakases
+
+fecha_epoch=$(date -d $1 +%s 2>/dev/null)
+
+if [[ $? -ne 0 ]]; then
+	echo "Formato de fecha inválido. Debe ser AAAA-MM-DD"
+	exit 1;
+fi
+
+# 1. Limpia pantalla
+clear;
+
+# 2 y 3. Informar que se borrarán las copias y pedir conformidad
+echo "Se eliminarán los backups de $directorio más antiguos a la fecha: $1";
+read -p "¿Quieres continuar con la operación? s/N : " confirm
+
+if [[ $confirm != "s" && $confirm != "S" ]]; then
+	echo "Operación cancelada.";
+	exit 0;
+fi
+
+# 4.
+
+for copia in "$directorio"/*; do
+	if [[ ! -f $copia ]]; then
+		continue;
+	fi
+
+	mod_epoch=$(stat -c %Y $copia);
+
+	if [[ $mod_epoch -lt $fecha_epoch ]]; then
+		echo "Eliminando $copia";
+		rm -f $copia;
+	fi
+done
+
+echo "Limpieza completada.";
