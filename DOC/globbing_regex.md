@@ -1,19 +1,13 @@
 # PATRONES DE COINCIDENCIA Y EXPRESIONES REGULARES
 
 ## Introducción
-En la Bash, los patrones de coincidencia y las expresiones regulares son utilizadas\
-para buscar, filtrar y manipular texto de manera flexible y eficiente.
+En la Bash, los patrones de coincidencia y las expresiones regulares son utilizadas para buscar, filtrar y manipular texto de manera flexible y eficiente.
 
-Los patrones de coincidencia (como los que usan los comodines ```*```, ```?``` o ```[...]```)\
-se aplican principalmente en la shell para tareas como seleccionar archivos o comparar cadenas\
-simples dentro de scripts.
+Los patrones de coincidencia (como los que usan los comodines `*`, `?` o `[...]`) se aplican principalmente en la shell para tareas como seleccionar archivos o comparar cadenas simples dentro de scripts.
 
-Por otro lado, las **expresiones regulares** (regex) ofrecen una forma más potente y precisa,\
-auque más compleja, de definir patrones, y se usan comúnmente con comandos como ```grep```, ```sed``` o ```awk```\
-para analizar, buscar y reemplazar texto según reglas avanzadas.
+Por otro lado, las **expresiones regulares** (regex) ofrecen una forma más potente y precisa, aunque más compleja, de definir patrones, y se usan comúnmente con comandos como `grep`, `sed` o `awk` para analizar, buscar y reemplazar texto según reglas avanzadas.
 
-En conjunto, ambas herramientas permiten automatizar tareas de procesamiento de texto y\
-administración del sistema de manera rápida y precisa.
+En conjunto, ambas herramientas permiten automatizar tareas de procesamiento de texto y administración del sistema de manera rápida y precisa.
 
 ## Patrones de coincidencia (GLOBBING)
 En Bash, los patrones (también llamados _globs_) se usan para comparar nombres de ficheros, cadenas y otros textos. No son expresiones regulares completas, pero tienen una sintaxis similar en algunos aspectos.
@@ -66,8 +60,7 @@ Ejemplo: `[[:digit:]]` coincide con cualquier número del 0 al 9.
 | `[:xdigit:]` | Dígitos hexadecimales (0-9,a-f,A-F) |
 
 ### Patrones extendido (extglob)
-Bash puede activar patrones más avanzados con `shopt -s extglob`.\
-Los patrones extendidos tienen el formato `caracter-especial(patrones)`, donde **patrones** puede representar un patrón o varios separados por un pipe `|`, llamado **lista-patrón**. Los siguientes operadores permiten crear coincidencia más flexibles.
+Bash puede activar patrones más avanzados con `shopt -s extglob`. Los patrones extendidos tienen el formato `caracter-especial(patrones)`, donde **patrones** puede representar un patrón o varios separados por un pipe `|`, llamado **lista-patrón**. Los siguientes operadores permiten crear coincidencia más flexibles.
 
 | Patrón | Significado | Ejemplo | Coincide con |
 | --- | --- | --- | --- |
