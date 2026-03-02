@@ -121,8 +121,8 @@ Si quieres ver más sobre Bash Scripting, consulta la guía de [gramática de la
 ## UTILIDADES Y TRUCOS ÚTILES
 
 > [!NOTE]
-> Nivel intermedio
-> Estos comandos ayudan a consultar información del sistema, buscar herramientas, crear atajos,/
+> Nivel intermedio.\
+> Estos comandos ayudan a consultar información del sistema, buscar herramientas, crear atajos,\
 > y mejorar la productividad en la terminal.
 
 ### Información sobre comandos y ayuda
