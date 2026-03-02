@@ -21,7 +21,7 @@ En Bash, los patrones (también llamados _globs_) se usan para comparar nombres 
 ### Reglas básicas
 - Cualquier carácter **no especial** en un patrón coincide **consigo mismo**. Por ejemplo:
   - El patrón `hola` sólo coincide con la cadena `hola`.
-- El carácter **NUL** (`\0`) **no puede aparecer** en un patrón.
+- El carácter **NULL** (`\0`) **no puede aparecer** en un patrón.
 - Los caracteres **especiales** deben protegerse (con comillas o la barra de escape **\**) si se desea que se interpreten literalmente. Por ejemplo:
   - Para que `*` se interprete literalmente, se debe escribir `\*` o `"*"`.
 
