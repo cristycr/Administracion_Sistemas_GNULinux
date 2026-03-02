@@ -35,7 +35,7 @@ organizados por temática y complejidad creciente.
 ## BÚSQUEDA Y FILTRACIÓN DE INFORMACIÓN
 
 > [!NOTE]
-> Nivel intermedio
+> Nivel intermedio.\
 > Estos comandos permiten localizar archivos, buscar texto y filtrar resultados.
 
 | Comando | Función | Ejemplo |
@@ -54,8 +54,8 @@ organizados por temática y complejidad creciente.
 ## ADMINISTRACIÓN DEL SISTEMA
 
 > [!NOTE]
-> Nivel intermedio-avanzado
-> Permiten gestionar procesos, usuarios, permisos y recursos del sistema.
+> Nivel intermedio-avanzado.\
+> Permiten gestionar procesos, usuarios, permisos y recursos del sistema.\
 > Si sabes usarlos, ya te vas pareciendo más a un auténtico administrador de sistemas.
 
 | Comando | Función | Ejemplo |
@@ -75,7 +75,7 @@ organizados por temática y complejidad creciente.
 ## RED Y CONECTIVIDAD
 
 > [!NOTE]
-> Nivel intermedio-avanzado
+> Nivel intermedio-avanzado.\
 > Para comprobar y gestionar la conectividad de red y servicios.
 
 | Comando | Función | Ejemplo |
@@ -94,7 +94,7 @@ organizados por temática y complejidad creciente.
 ## COMPRESIÓN, EMPAQUETADO Y BACKUPS
 
 > [!NOTE]
-> Nivel intermedio-avanzado
+> Nivel intermedio-avanzado.
 
 | Comando | Función | Ejemplo |
 | --- | --- | --- |
@@ -108,7 +108,7 @@ organizados por temática y complejidad creciente.
 ## SHELL SCRIPTING Y AUTOMATIZACIÓN
 
 > [!NOTE]
-> Nivel avanzado
+> Nivel avanzado.\
 > Permite combinar comandos y automatizar tareas mediante la creación de scripts.
 
 | Comando | Función | Ejemplo |
