@@ -2,32 +2,28 @@
 
 ## INTRODUCCIÓN
 
-La **bash (Bourne Again Shell)** es la interfaz de línea de comandos más utilizada en sistemas\
-Linux y Unix. Permite ejecutar programas, automatizar tareas mediante scripts y administrar el\
-sistema de forma eficiente.\
-Dominar los comandos de Bash es esencial para cualquier administrador de sistemas o usuario\
-avanzado de Linux.
+La **bash (Bourne Again Shell)** es la interfaz de línea de comandos más utilizada en sistemas basados en UNIX. Permite ejecutar programas, automatizar tareas mediante scripts y administrar el sistema de forma eficiente.\
+Dominar los comandos de Bash es esencial para cualquier administrador de sistemas o usuario avanzado de Linux.
 
-A continuación, encontrarás una recopilación de comandos esenciales, intermedios y avanzados,\
-organizados por temática y complejidad creciente.
+A continuación, encontrarás una recopilación de comandos esenciales, intermedios y avanzados, organizados por temática y complejidad creciente.
 
-## COMANDOS BÁSICOS DE NAVEGACIÓN Y GESTIÓN DE ARCHIVOS
+## COMANDOS BÁSICOS DE NAVEGACIÓN Y GESTIÓN DE FICHEROS
 
 > [!NOTE]
 > Nivel principiante.\
-> Estos comandos permiten moverse por el sistema de ficheros y manipular archivos y directorios.
+> Estos comandos permiten moverse por el sistema de ficheros y manipular ficheros y directorios.
 
 | Comando | Función | Ejemplo |
 | --- | --- | --- |
 | `pwd` | Muestra el directorio actual de trabajo | `pwd` |
-| `ls` | Lista archivos y directorios | `ls -l` |
+| `ls` | Lista ficheros y directorios | `ls -l` |
 | `cd` | Cambia de directorio | `cd /etc` |
 | `mkdir` | Crea un nuevo directorio | `mkdir temporal` |
 | `rmdir` | Elimina un directorio **vacío** | `rmdir temporal` |
-| `cp` | Copia archivos o directorios | `cp archivo /archivo.backup` |
-| `mv` | Mueve o renombra archivos | `mv viejo nuevo` |
+| `cp` | Copia ficheros o directorios | `cp fichero /fichero.backup` |
+| `mv` | Mueve o renombra ficheros | `mv viejo nuevo` |
 | `rm` | Elimina ficheros | `rm fichero.txt` |
-| `touch` | Crea un archivo vacío o actualiza su fecha | `touch apuntes.txt` |
+| `touch` | Crea un fichero vacío o actualiza su fecha | `touch apuntes.txt` |
 | `cat` | Muestra el contenido de un fichero | `cat apuntes` |
 | `less/more` | Muestra contenido de forma paginada | `less /etc/passwd` |
 | `file` | Muestra el tipo de fichero | `file imagen.png` |
@@ -36,7 +32,7 @@ organizados por temática y complejidad creciente.
 
 > [!NOTE]
 > Nivel intermedio.\
-> Estos comandos permiten localizar archivos, buscar texto y filtrar resultados.
+> Estos comandos permiten localizar ficheros, buscar texto y filtrar resultados.
 
 | Comando | Función | Ejemplo |
 | --- | --- | --- |
@@ -45,7 +41,7 @@ organizados por temática y complejidad creciente.
 | `grep` | Busca texto dentro de ficheros | `grep "error" /var/log/syslog"` |
 | `sort` | Ordena líneas de texto | `sort nombres` |
 | `uniq` | Elimina duplicados consecutivos | `uniq lista.txt` |
-| `wc` | Cuenta líneas, palabras y caracteres | `wc -l archivo` |
+| `wc` | Cuenta líneas, palabras y caracteres | `wc -l fichero` |
 | `head/tail` | Muestra las primeras o últimas líneas | `tail -n 20 log.txt` |
 | `cut` | Extrae secciones de texto | `cut -d: -f1 /etc/passwd` |
 | `awk` | Procesa texto por patrones | `awk '{print $1}' lista.txt` |
@@ -82,12 +78,12 @@ organizados por temática y complejidad creciente.
 | --- | --- | --- |
 | `ping` | Comprueba la conectividad con otro host | `ping 192.168.1.1` |
 | `curl` | Realiza peticiones HTTP | `curl -I https://prueba.com` |
-| `wget` | Descarga archivos desde Internet | `wget https://prueba.com/script.sh` |
+| `wget` | Descarga ficheros desde Internet | `wget https://prueba.com/script.sh` |
 | `netstat` | Muestra conexiones y puertos abiertos | `netstat -tulnp` |
 | `ss` | Alternativa moderna a `netstat` | `ss -ltn` |
 | `ip` | Configura interfaces de red | `ip a` |
 | `traceroute` | Rastrea la ruta a un host | `traceroute google.com` |
-| `scp` | Copia archivos entre equipos por SSH | `scp fichero usuario@host:/path/`
+| `scp` | Copia ficheros entre equipos por SSH | `scp fichero usuario@host:/path/`
 | `rsync` | Sincroniza ficheros o directorios | `rsync -av tmp/ temporal/` |
 | `ssh` | Establece conexión con un sistema remoto | `ssh usuario@host` |
 
@@ -98,10 +94,10 @@ organizados por temática y complejidad creciente.
 
 | Comando | Función | Ejemplo |
 | --- | --- | --- |
-| `tar` | Crea o extrae archivos comprimidos | `tar -czvf backup.tar.gz /home/user` |
-| `gzip/gunzip` | Comprime o descomprime archivos | `gzip fichero.txt` |
-| `bzip2/bunzip2` | Mayor compresión que zip, pero más lento | `bzip2 archivo.txt` |
-| `zip/unzip` | Crea o extrae archivos ZIP | `zip -r backup.zip temporal/` |
+| `tar` | Crea o extrae ficheros comprimidos | `tar -czvf backup.tar.gz /home/user` |
+| `gzip/gunzip` | Comprime o descomprime ficheros | `gzip fichero.txt` |
+| `bzip2/bunzip2` | Mayor compresión que zip, pero más lento | `bzip2 fichero.txt` |
+| `zip/unzip` | Crea o extrae ficheros ZIP | `zip -r backup.zip temporal/` |
 | `7z/7za` | Alta compresión (usa LZMA/LZMA2) | `7z a backup.7z temporal/` |
 | `dd` | Copia y convierte datos (backups de discos) | `dd if=/dev/sda of=/backup.img` | 
 
@@ -185,10 +181,10 @@ Si quieres ver más sobre Bash Scripting, consulta la guía de [gramática de la
 | --- | --- | --- |
 | `tr` | Sustituye o elimina caracteres	| `tr a-z A-Z < texto.txt` |
 | `rev` | Invierte líneas de texto | `rev; hola` |
-| `nl` | Numera las líneas de un archivo | `nl script.sh` | 
-| `paste` | Une líneas de archivos | `paste p1.txt p2.txt` | 
-| `join` | Combina archivos por campos comunes | `join p1 p2` | 
-| `split` | Divide ficheros grandes en pequeñas secciones | `split -b 100M archivo.iso parte_` | 
+| `nl` | Numera las líneas de un fichero | `nl script.sh` | 
+| `paste` | Une líneas de ficheros | `paste p1.txt p2.txt` | 
+| `join` | Combina ficheros por campos comunes | `join p1 p2` | 
+| `split` | Divide ficheros grandes en pequeñas secciones | `split -b 100M fichero.iso parte_` | 
 | `tee` | Muestra y guarda la salida a la vez | `tee;ls` |
 | `cut` | Divide ficheros línea por línea por un delimitador dado | `cut -d: -f1 /etc/passwd` |
 
