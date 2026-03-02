@@ -42,7 +42,7 @@ organizados por temática y complejidad creciente.
 | --- | --- | --- |
 | `find` | Busca ficheros o directorios por nombre o tipo | `find /home -name "*.txt"` |
 | `locate` | Busca ficheros en la base de datos del sistema | `locate bashrc` |
-| `grep` | Busca texto denrto de ficheros | `grep "error" /var/log/syslog"` |
+| `grep` | Busca texto dentro de ficheros | `grep "error" /var/log/syslog"` |
 | `sort` | Ordena líneas de texto | `sort nombres` |
 | `uniq` | Elimina duplicados consecutivos | `uniq lista.txt` |
 | `wc` | Cuenta líneas, palabras y caracteres | `wc -l archivo` |
